@@ -1,15 +1,20 @@
 package Aeropuerto;
 
+import java.util.Arrays;
 import java.util.Date;
 import Avion.Avion;
+import tiquetes.Tiquete;
 
 public class Vuelo {
 	
+	private final String estados[]={"En pista","Prï¿½ximo a aterrizar","En sala","Prï¿½ximo a despegar","Retrasado","Cancelado"};
+	
+	
 	private int codAeroptSalida,codAeroptLlegada;
-	Date horaSalida, horaLlegada;
-	Avion avion;
+	private Date horaSalida, horaLlegada;
+	private Avion avion;
 	private String estado;
-	private final String estados[]={"En pista","Próximo a aterrizar","En sala","Próximo a despegar","Retrasado","Cancelado"};
+	private Tiquete tiquetes[];
 	
 	public Vuelo(int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion) {
 		this.codAeroptSalida = codAeroptSalida;
@@ -18,6 +23,13 @@ public class Vuelo {
 		this.horaLlegada = horaLlegada;
 		this.avion = avion;
 		this.estado = estados[estado];
+		this.tiquetes=new Tiquete[0];
+	}
+	
+	public void addTiquete(Tiquete t) {
+		tiquetes=Arrays.copyOf(tiquetes, tiquetes.length+1);
+		
+		tiquetes[tiquetes.length-1]=t;
 	}
 
 	public int getCodAeroptSalida() {
