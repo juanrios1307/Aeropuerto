@@ -5,18 +5,18 @@ import Persona.Persona;
 
 public abstract class Avion {
 	
-	private double capCarga,combustMin,combustMax;
+	private double capCarga,combustMax,consumo;
 	private String modelo;
 	Persona piloto, copiloto;
 	
-	public Avion(double capCarga, double combustMin, double combustMax, String modelo, Persona piloto,
+	public Avion(double capCarga, double combustMax,double consumo, String modelo, Persona piloto,
 			Persona copiloto) {
 		this.capCarga = capCarga;
-		this.combustMin = combustMin;
 		this.combustMax = combustMax;
 		this.modelo = modelo;
 		this.piloto = piloto;
 		this.copiloto = copiloto;
+		this.consumo = consumo;
 	}
 
 	public double getCapCarga() {
