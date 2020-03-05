@@ -27,14 +27,6 @@ public abstract class Avion {
 		this.capCarga = capCarga;
 	}
 
-	public double getCombustMin() {
-		return combustMin;
-	}
-
-	public void setCombustMin(double combustMin) {
-		this.combustMin = combustMin;
-	}
-
 	public double getCombustMax() {
 		return combustMax;
 	}
