@@ -1,24 +1,33 @@
 package Mecanico;
 	
-	import java.time.Period;
-import java.util.Date;
-
-import Persona.Persona;
+	import Persona.Persona;
+	import Aeropuerto.Vuelo;
+	import Avion.Avion;
 	
 public class mecanico {
-	
+
+	public mecanico() {
+		super();
+	}
 	Persona persona;
-	private int licenciaMecanico;
+	Vuelo vuelo;
+	Avion avion;
 	
-	
-	public boolean aceite(boolean aceite) {
-		return aceite;
+	public boolean validacion() {
+		return (aceite()&&pesoBalance());
 	}
 	
-	public double pesoCombustible(double consumo, Date horaSalida, Date horaLlegada) {
-		Period p = new Period(horaSalida, horaLlegada);
-		long hours= p.getHours();
-		return 0;
+	public boolean aceite(double aceite) {
+		if ((aceite<=avion.getNivAceite()*1.1)&&(aceite>=avion.getNivAceite()*0.9)) {
+			return true;
+		}
+		return false;
+	}
+	
+	public double pesoCombustible() {
+		long diferencia = vuelo.getHoraLlegada().getTime() - vuelo.getHoraSalida().getTime();
+		long hours = diferencia / (60 * 60 * 1000) % 24;
+		return avion.getConsumo()*hours;
 	}
 	
 	public boolean pesoBalance(boolean pesoBalance) {

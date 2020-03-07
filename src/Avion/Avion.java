@@ -16,7 +16,7 @@ public abstract class Avion {
 		this.modelo = modelo;
 		this.piloto = piloto;
 		this.copiloto = copiloto;
-		this.consumo = consumo;
+		this.setConsumo(consumo);
 	}
 
 	public double getCapCarga() {
@@ -57,6 +57,14 @@ public abstract class Avion {
 
 	public void setCopiloto(Persona copiloto) {
 		this.copiloto = copiloto;
+	}
+
+	public double getConsumo() {
+		return consumo;
+	}
+
+	public void setConsumo(double consumo) {
+		this.consumo = consumo;
 	}
 	
 	
