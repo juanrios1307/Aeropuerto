@@ -7,13 +7,14 @@ import tiquetes.Tiquete;
 
 public class Vuelo {
 	
-	private final String estados[]={"En pista","Pr�ximo a aterrizar","En sala","Pr�ximo a despegar","Retrasado","Cancelado"};
+	private final String estados[]={"En pista","Proximo a aterrizar","En sala","Proximo a despegar","Retrasado","Cancelado"};
 	
 	
 	private int codAeroptSalida,codAeroptLlegada;
 	private Date horaSalida, horaLlegada;
 	private Avion avion;
 	private String estado;
+	private boolean planDeVuelo,metar,notam;
 	private Tiquete tiquetes[];
 	
 	public Vuelo(int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion) {
