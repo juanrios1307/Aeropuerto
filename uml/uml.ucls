@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="tiquetes.Tiquete" project="Aeropuerto" 
     file="/Aeropuerto/src/tiquetes/Tiquete.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="160" y="-293"/>    
+    <position height="-1" width="-1" x="132" y="-287"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -126,7 +126,7 @@
     <end type="SOURCE" refId="4" navigable="false">      
       <attribute id="22" name="tiquetes"/>      
       <multiplicity id="23" minimum="0" maximum="2147483647">        
-        <position height="15" width="21" x="18" y="-202"/>      
+        <position height="15" width="21" x="266" y="-188"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    

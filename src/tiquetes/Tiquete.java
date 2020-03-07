@@ -2,37 +2,59 @@ package tiquetes;
 
 import java.util.Date;
 
+import Aeropuerto.Vuelo;
+import Persona.Persona;
+
 public class Tiquete {
 	
 	private Date fechaCompra;
-	private String asiento;
+	private int numSilla;
+	private char filaAsiento;
 	private int grupoAbordaje;
 	private String codigoReserva;
 	private Date horaEnSala;
 	private String clase;
 	private double pesoEquipajePermitido;
 	
-	//private Vuelo vuelo;
-	//private Persona persona;
+	private Vuelo vuelo;
+	private Persona persona;
 	
-	public Tiquete(Date fechaCompra, String asiento, int grupoAbordaje, String codigoReserva, Date horaEnSala,String clase/*,Vuelo vuelo, Persona persona*/) {
-		super();
-		this.fechaCompra = fechaCompra;
-		this.asiento = asiento;
-		this.grupoAbordaje = grupoAbordaje;
-		this.codigoReserva = codigoReserva;
-		this.horaEnSala = horaEnSala;
-		this.clase=clase;
-		/*this.vuelo = vuelo;
-		this.persona = persona;*/
-	}
+	
 
 	public Date getFechaCompra() {
 		return fechaCompra;
 	}
 
-	public String getAsiento() {
-		return asiento;
+	public Tiquete(Date fechaCompra, int numSilla, char filaAsiento, int grupoAbordaje, String codigoReserva,
+			Date horaEnSala, String clase, double pesoEquipajePermitido, Vuelo vuelo, Persona persona) {
+		super();
+		this.fechaCompra = fechaCompra;
+		this.numSilla = numSilla;
+		this.filaAsiento = filaAsiento;
+		this.grupoAbordaje = grupoAbordaje;
+		this.codigoReserva = codigoReserva;
+		this.horaEnSala = horaEnSala;
+		this.clase = clase;
+		this.pesoEquipajePermitido = pesoEquipajePermitido;
+		this.vuelo = vuelo;
+		this.persona = persona;
+	}
+	
+	
+	public int getNumSilla() {
+		return numSilla;
+	}
+
+	public char getFilaAsiento() {
+		return filaAsiento;
+	}
+
+	public Vuelo getVuelo() {
+		return vuelo;
+	}
+
+	public Persona getPersona() {
+		return persona;
 	}
 
 	public int getGrupoAbordaje() {
@@ -54,10 +76,6 @@ public class Tiquete {
 	public double getPesoEquipajePermitido() {
 		return pesoEquipajePermitido;
 	}
-	
-	
-	
-	
 	
 	
 }
