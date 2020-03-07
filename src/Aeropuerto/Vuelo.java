@@ -3,6 +3,7 @@ package Aeropuerto;
 import java.util.Arrays;
 import java.util.Date;
 import Avion.Avion;
+import Persona.Piloto;
 import tiquetes.Tiquete;
 
 public class Vuelo {
@@ -13,15 +14,18 @@ public class Vuelo {
 	private int codAeroptSalida,codAeroptLlegada;
 	private Date horaSalida, horaLlegada;
 	private Avion avion;
+	private Piloto piloto,copiloto;
 	private String estado;
 	private boolean planDeVuelo,metar,notam;
 	private Tiquete tiquetes[];
 	
-	public Vuelo(int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion) {
+	public Vuelo(int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion,Piloto piloto, Piloto copiloto) {
 		this.codAeroptSalida = codAeroptSalida;
 		this.codAeroptLlegada = codAeroptLlegada;
 		this.horaSalida = horaSalida;
 		this.horaLlegada = horaLlegada;
+		this.setPiloto(piloto);
+		this.setCopiloto(copiloto);
 		this.avion = avion;
 		this.estado = estados[estado];
 		this.tiquetes=new Tiquete[0];
@@ -83,6 +87,48 @@ public class Vuelo {
 
 	public String[] getEstados() {
 		return estados;
+	}
+	
+
+	public Piloto getCopiloto() {
+		return copiloto;
+	}
+	
+
+	public void setCopiloto(Piloto copiloto) {
+		this.copiloto = copiloto;
+	}
+
+	public Piloto getPiloto() {
+		return piloto;
+	}
+
+	public void setPiloto(Piloto piloto) {
+		this.piloto = piloto;
+	}
+
+	public boolean isNotam() {
+		return notam;
+	}
+
+	public void setNotam(boolean notam) {
+		this.notam = notam;
+	}
+
+	public boolean isMetar() {
+		return metar;
+	}
+
+	public void setMetar(boolean metar) {
+		this.metar = metar;
+	}
+
+	public boolean isPlanDeVuelo() {
+		return planDeVuelo;
+	}
+
+	public void setPlanDeVuelo(boolean planDeVuelo) {
+		this.planDeVuelo = planDeVuelo;
 	}
 	
 	

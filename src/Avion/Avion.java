@@ -1,8 +1,6 @@
 
 package Avion;
 
-import Persona.Piloto;
-
 public abstract class Avion {
 	
 	private double capCarga,combustMax,consumo;
@@ -10,7 +8,7 @@ public abstract class Avion {
 	private String modelo,aerolinea;
 	private boolean planVuelo,metar,notam,pesoBalance,brujula,altimetro,aceite,extintores,equipoOxigeno,equipoEmergencia;
 
-	public Avion(double capCarga, double combustMax,double consumo, String modelo,Piloto piloto, Piloto copiloto, String aerolinea, int horasVuelo) {
+	public Avion(double capCarga, double combustMax,double consumo, String modelo, String aerolinea, int horasVuelo) {
 		this.capCarga = capCarga;
 		this.combustMax = combustMax;
 		this.aerolinea = aerolinea;
