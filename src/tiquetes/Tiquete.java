@@ -15,11 +15,8 @@ public class Tiquete {
 	private Date horaEnSala;
 	private String clase;
 	private double pesoEquipajePermitido;
-	
 	private Vuelo vuelo;
 	private Persona persona;
-	
-	
 
 	public Date getFechaCompra() {
 		return fechaCompra;
