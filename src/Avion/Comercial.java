@@ -1,14 +1,16 @@
 package Avion;
 
-import Persona.Persona;
+import Persona.Piloto;
 
 public class Comercial extends Avion{
 
 	private int numPasajeros;
 
-	public Comercial(double capCarga, double combustMin, double combustMax, String modelo, Persona piloto,
-			Persona copiloto, int numPasajeros) {
-		super(capCarga, combustMin, combustMax, modelo, piloto, copiloto);
+
+
+	public Comercial(double capCarga, double combustMax, double consumo, String modelo, Piloto piloto, Piloto copiloto,
+			String aerolinea, int horasVuelo, int numPasajeros) {
+		super(capCarga, combustMax, consumo, modelo, piloto, copiloto, aerolinea, horasVuelo);
 		this.numPasajeros = numPasajeros;
 	}
 
