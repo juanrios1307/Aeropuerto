@@ -1,3 +1,4 @@
+package Aeropuerto;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -6,7 +7,7 @@ import java.io.ObjectInputStream;
 
 import Persona.Persona;
 
-public class policia {
+public class Policia {
 Persona per;
 String ubicArres;
 	public void arrestar(String person) {
