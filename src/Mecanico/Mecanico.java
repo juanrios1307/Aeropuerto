@@ -4,9 +4,9 @@ package Mecanico;
 	import Aeropuerto.Vuelo;
 	import Avion.Avion;
 	
-public class mecanico {
+public class Mecanico {
 
-	public mecanico() {
+	public Mecanico() {
 		super();
 	}
 	Persona persona;

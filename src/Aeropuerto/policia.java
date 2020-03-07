@@ -4,8 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-public class polici {
-persona per;
+import Persona.Persona;
+
+public class policia {
+Persona per;
 String ubicArres;
 	public void arrestar(String person) {
 	
@@ -13,9 +15,9 @@ String ubicArres;
 			
 			FileInputStream fileIN=new FileInputStream(person);
 			ObjectInputStream in= new ObjectInputStream(fileIN);
-		per=(persona)in.ReadObject();
+		per=(Persona)in.readObject();
 		try {
-			BufferedWriter write=new BufferedWriter(new FileWriter(ubicArres,false));
+			BufferedWriter write=new BufferedWriter(new FileWriter(ubicArres,true));
 			 write.append(per.getdocumento()+"\n");
 			 write.append(per.getnombre()+"\n");
 			 write.append(per.getedad()+"\n");
