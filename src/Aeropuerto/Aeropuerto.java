@@ -1,6 +1,5 @@
 package Aeropuerto;
 
-import java.util.Date;
 import 	Mecanico.Mecanico;
 
 public class Aeropuerto {
