@@ -1,0 +1,20 @@
+
+import java.util.*;
+public class Maleta extends Persona {
+	private Mercancia[] mercancias;
+	private double peso;
+	
+	public Mercancia[] getMercancias() {
+		return mercancias;
+	}
+	public double getPeso() {
+		return peso;
+	}
+
+	public Maleta(String nombre, String documento, String nacionalidad,boolean enfermo, int edad,Mercancia[] mercancias, double peso) {
+		super(nombre,documento,nacionalidad,edad,enfermo);
+		this.mercancias = mercancias;
+		this.peso = peso;
+	}
+	
+}
