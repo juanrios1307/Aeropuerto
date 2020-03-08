@@ -16,7 +16,7 @@ public class Vuelo {
 	private Avion avion;
 	private Piloto piloto,copiloto;
 	private String estado;
-	private boolean planDeVuelo,metar,notam;
+	private boolean planDeVuelo,metar;
 	private Tiquete tiquetes[];
 	
 	public Vuelo(int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion,Piloto piloto, Piloto copiloto) {
