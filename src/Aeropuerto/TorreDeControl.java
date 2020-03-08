@@ -24,7 +24,7 @@ public class TorreDeControl {
 				}
 				return estados[3];
 			}
-				return estados[2];
+			return estados[2];
 		}
 		return estados[5];
 	}
