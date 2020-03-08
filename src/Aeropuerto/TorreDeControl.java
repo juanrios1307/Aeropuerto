@@ -9,7 +9,7 @@ public class TorreDeControl {
 	Mecanico mecanico;
 	Vuelo vuelo;
 	
-	private boolean notam;
+	private boolean notam,avionAproximando;
 	
 	public void asignarNotamVuelo(boolean notam) {
 		vuelo.setNotam(notam);
@@ -27,6 +27,12 @@ public class TorreDeControl {
 			return estados[2];
 		}
 		return estados[5];
+	}
+	
+	public String estadoVueloLlegada() {
+		if(avionAproximando) {
+			
+		}
 	}
    
 }
