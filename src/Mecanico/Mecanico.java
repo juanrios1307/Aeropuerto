@@ -5,16 +5,26 @@ package Mecanico;
 	import Avion.Avion;
 	
 public class Mecanico {
-
-	public Mecanico() {
-		super();
-	}
 	Persona persona;
 	Vuelo vuelo;
 	Avion avion;
+	private boolean pesoBalance, brujula, altimetro, extintores, equipoOxigeno, equipoEmergencia;
+	private double aceite;
 	
+	public Mecanico(boolean pesoBalance, boolean brujula, boolean altimetro, boolean extintores, boolean equipoOxigeno,
+			boolean equipoEmergencia, double aceite) {
+		super();
+		this.pesoBalance = pesoBalance;
+		this.brujula = brujula;
+		this.altimetro = altimetro;
+		this.extintores = extintores;
+		this.equipoOxigeno = equipoOxigeno;
+		this.equipoEmergencia = equipoEmergencia;
+		this.aceite = aceite;
+	}
+
 	public boolean validacion() {
-		return (aceite()&&pesoBalance());
+		return (pesoBalance&&brujula&&altimetro&&extintores&&equipoOxigeno&&equipoEmergencia&&aceite(aceite)&&pesoAdecuado());
 	}
 	
 	public boolean aceite(double aceite) {
@@ -29,28 +39,54 @@ public class Mecanico {
 		long hours = diferencia / (60 * 60 * 1000) % 24;
 		return avion.getConsumo()*hours;
 	}
-	
-	public boolean pesoBalance(boolean pesoBalance) {
-		return pesoBalance;
+
+	public boolean pesoAdecuado() {
+		if((pesoCombustible()<=avion.getCombustMax())&&(pesoCombustible()+1)<=(avion.getCapCarga()+avion.getCombustMax())) {
+			return true;
+		}
+		return false;
 	}
-	public boolean brujula(boolean brujula) {
+	
+	public boolean isPesoBalance() {
+		return pesoBalance;
+	}	public void setPesoBalance(boolean pesoBalance) {
+		this.pesoBalance = pesoBalance;
+	}
+	public boolean isBrujula() {
 		return brujula;
 	}
-	public boolean altimetro(boolean altimetro) {
+	public void setBrujula(boolean brujula) {
+		this.brujula = brujula;
+	}
+	public boolean isAltimetro() {
 		return altimetro;
 	}
-	public boolean extintores(boolean extintores) {
+	public void setAltimetro(boolean altimetro) {
+		this.altimetro = altimetro;
+	}
+	public boolean isExtintores() {
 		return extintores;
 	}
-	public boolean equipoOxigeno(boolean equipoOxigeno) {
+	public void setExtintores(boolean extintores) {
+		this.extintores = extintores;
+	}
+	public boolean isEquipoOxigeno() {
 		return equipoOxigeno;
 	}
-	public boolean equipoEmergencia(boolean equipoEmergencia) {
+	public void setEquipoOxigeno(boolean equipoOxigeno) {
+		this.equipoOxigeno = equipoOxigeno;
+	}
+	public boolean isEquipoEmergencia() {
 		return equipoEmergencia;
 	}
-	
-	
-	
-	
-	
+	public void setEquipoEmergencia(boolean equipoEmergencia) {
+		this.equipoEmergencia = equipoEmergencia;
+	}
+	public double getAceite() {
+		return aceite;
+	}
+	public void setAceite(double aceite) {
+		this.aceite = aceite;
+	}
+		
 }
