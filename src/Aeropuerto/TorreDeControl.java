@@ -15,11 +15,18 @@ public class TorreDeControl {
 		vuelo.setNotam(notam);
 	}
 	
-	public boolean estadoVuelo() {
-		
-		if(vuelo.isMetar()&&vuelo.isPlanDeVuelo()&&notam&&mecanico.validacion()) {
-			return true;
+	public String estadoVuelo() {
+		final String estados[]={"En pista","Proximo a aterrizar","En sala","Proximo a despegar","Retrasado","Cancelado"};
+		if(vuelo!=null) {
+			if(vuelo.isPlanDeVuelo()&&vuelo.isMetar()&&mecanico.validacion()) {
+				if(notam) {
+					return estados[0];
+				}
+				return estados[3];
+			}
+				return estados[2];
 		}
-		return true;
+		return estados[5];
 	}
+   
 }
