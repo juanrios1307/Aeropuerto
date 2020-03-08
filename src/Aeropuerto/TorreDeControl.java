@@ -29,10 +29,11 @@ public class TorreDeControl {
 		return estados[5];
 	}
 	
-	public String estadoVueloLlegada() {
+	public Vuelo estadoVueloLlegada(Vuelo vuelo) {
 		if(avionAproximando) {
-			
+			return vuelo;
 		}
+		return null;
 	}
    
 }
