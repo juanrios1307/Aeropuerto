@@ -24,8 +24,8 @@ public class Vuelo {
 		this.codAeroptLlegada = codAeroptLlegada;
 		this.horaSalida = horaSalida;
 		this.horaLlegada = horaLlegada;
-		this.setPiloto(piloto);
-		this.setCopiloto(copiloto);
+		this.piloto=piloto;
+		this.copiloto=copiloto;
 		this.avion = avion;
 		this.estado = estados[estado];
 		this.tiquetes=new Tiquete[0];

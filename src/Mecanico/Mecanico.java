@@ -54,7 +54,8 @@ public class Mecanico {
 	
 	public boolean isPesoBalance() {
 		return pesoBalance;
-	}	public void setPesoBalance(boolean pesoBalance) {
+	}
+	public void setPesoBalance(boolean pesoBalance) {
 		this.pesoBalance = pesoBalance;
 	}
 	public boolean isBrujula() {
