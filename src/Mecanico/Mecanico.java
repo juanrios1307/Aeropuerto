@@ -12,16 +12,6 @@ public class Mecanico {
 	private boolean pesoBalance, brujula, altimetro, extintores, equipoOxigeno, equipoEmergencia;
 	private double aceite;
 	
-	public Mecanico(boolean pesoBalance, boolean brujula, boolean altimetro, boolean extintores, boolean equipoOxigeno,
-			boolean equipoEmergencia, double aceite) {
-		this.pesoBalance = pesoBalance;
-		this.brujula = brujula;
-		this.altimetro = altimetro;
-		this.extintores = extintores;
-		this.equipoOxigeno = equipoOxigeno;
-		this.equipoEmergencia = equipoEmergencia;
-		this.aceite = aceite;
-	}
 	public Mecanico(Vuelo vuelo) {
 		super();
 		this.vuelo = vuelo;
