@@ -89,12 +89,10 @@ public class Vuelo {
 		return estados;
 	}
 	
-
 	public Piloto getCopiloto() {
 		return copiloto;
 	}
 	
-
 	public void setCopiloto(Piloto copiloto) {
 		this.copiloto = copiloto;
 	}

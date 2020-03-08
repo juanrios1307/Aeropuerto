@@ -15,8 +15,11 @@ public class TorreDeControl {
 		vuelo.setNotam(notam);
 	}
 	
-	public boolean permitirSalida() {
-		if(vuelo.isMetar()&&)
+	public boolean estadoVuelo() {
+		
+		if(vuelo.isMetar()&&vuelo.isPlanDeVuelo()&&notam&&mecanico.validacion()) {
+			return true;
+		}
 		return true;
 	}
 }

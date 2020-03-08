@@ -9,6 +9,6 @@ public class Principal {
 		System.out.println("Hello World");
 		MenuAeropuerto menu=new MenuAeropuerto();
 		menu.setVisible(true);
-	}
 
+	}
 }
