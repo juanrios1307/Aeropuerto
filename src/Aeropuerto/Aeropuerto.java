@@ -13,7 +13,7 @@ public class Aeropuerto {
 
 	Vuelo vueloLlegada, vueloSalida;
 	
-	public double impuestosAeropuertarios(Date tiempoAeropuerto) {
+	public double impuestosAeropuertuarios(Date tiempoAeropuerto) {
 		long diferencia = vueloLlegada.getHoraLlegada().getTime() - vueloSalida.getHoraSalida().getTime();
 		long hours = diferencia / (60 * 60 * 1000) % 24;
 		return hours*2000000;
