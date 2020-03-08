@@ -5,6 +5,7 @@ package Mecanico;
 	import Avion.Avion;
 	
 public class Mecanico {
+
 	Persona persona;
 	Vuelo vuelo;
 	Avion avion;
@@ -13,7 +14,6 @@ public class Mecanico {
 	
 	public Mecanico(boolean pesoBalance, boolean brujula, boolean altimetro, boolean extintores, boolean equipoOxigeno,
 			boolean equipoEmergencia, double aceite) {
-		super();
 		this.pesoBalance = pesoBalance;
 		this.brujula = brujula;
 		this.altimetro = altimetro;
@@ -22,6 +22,11 @@ public class Mecanico {
 		this.equipoEmergencia = equipoEmergencia;
 		this.aceite = aceite;
 	}
+	public Mecanico(Vuelo vuelo) {
+		super();
+		this.vuelo = vuelo;
+	}
+	
 
 	public boolean validacion() {
 		return (pesoBalance&&brujula&&altimetro&&extintores&&equipoOxigeno&&equipoEmergencia&&aceite(aceite)&&pesoAdecuado());
