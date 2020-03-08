@@ -1,5 +1,29 @@
 package Persona;
-
-public class Persona{
-	
+import java.util.*;
+import java.io.*;
+public class Persona implements Serializable {
+		protected String nombre,documento,nacionalidad;
+		protected int edad;
+		protected boolean coronavirus;
+		
+		public String getNombre() {
+			return nombre;
+		}
+		public String getDocumento() {
+			return documento;
+		}
+		public String getNacionalidad() {
+			return nacionalidad;
+		}
+		public int getEdad() {
+			return edad;
+		}
+		
+		public Persona(String nombre, String documento, String nacionalidad, int edad) {
+			this.nombre = nombre;
+			this.documento = documento;
+			this.nacionalidad = nacionalidad;
+			this.edad = edad;
+		}
+		
 }
