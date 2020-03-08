@@ -9,8 +9,9 @@ import java.io.ObjectInputStream;
 import Persona.Persona;
 
 public class Policia {
-Persona per;
-String ubicArres;
+	Persona per;
+	String ubicArres="C:\\Users\\jergf\\Downloads\\Proyectos lenguajes made in windows\\EstructurasDeDatos\\Aeropuerto\\archivosTexto\\arrestados.txt";
+	
 	public void arrestar(String person) {
 	
 		try { 
@@ -20,8 +21,8 @@ String ubicArres;
 			per=(Persona)in.readObject();
 			try {
 				BufferedWriter write=new BufferedWriter(new FileWriter(ubicArres,true));
-				 write.append(per.getDocumento()+"\n");
-				 write.append(per.getNombre()+"\n");
+				 write.append(per.getDocumento()+"\t");
+				 write.append(per.getNombre()+"\t");
 				 write.append(per.getEdad()+"\n");
 				 write.append("------------------------"+"\n");
 				write.close();}
@@ -29,17 +30,10 @@ String ubicArres;
 				System.out.println(e1.getMessage());}
 			in.close();
 			fileIN.close();
-			}
-		catch (ClassNotFoundException e) {
+		}catch (Exception e) {
 			e.printStackTrace();
-			} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
-		
 	}
+		
+}
 

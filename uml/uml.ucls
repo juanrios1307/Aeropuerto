@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="tiquetes.Tiquete" project="Aeropuerto" 
     file="/Aeropuerto/src/tiquetes/Tiquete.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="132" y="-287"/>    
+    <position height="-1" width="-1" x="105" y="-292"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="Aeropuerto.Aeropuerto" project="Aeropuerto" 
     file="/Aeropuerto/src/Aeropuerto/Aeropuerto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="786" y="-359"/>    
+    <position height="-1" width="-1" x="954" y="-374"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -131,113 +131,129 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="21">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="22" name="vuelo"/>      
-      <multiplicity id="23" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="24">    
     <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="25" name="controlador">        
+      <attribute id="22" name="controlador">        
         <position height="17" width="64" x="695" y="399"/>      
       </attribute>      
-      <multiplicity id="26" minimum="0" maximum="1"/>    
+      <multiplicity id="23" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="27">    
+  <association id="24">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="28" name="piloto">        
-        <position height="17" width="33" x="326" y="328"/>      
+      <attribute id="25" name="piloto">        
+        <position height="17" width="33" x="353" y="320"/>      
       </attribute>      
-      <multiplicity id="29" minimum="0" maximum="1">        
+      <multiplicity id="26" minimum="0" maximum="1">        
         <position height="15" width="23" x="245" y="347"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="30">    
+  <generalization id="27">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <generalization id="31">    
+  <generalization id="28">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
-  <generalization id="32">    
+  <generalization id="29">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
-  <association id="33">    
+  <association id="30">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="34" name="tiquetes">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="31" name="tiquetes">        
+        <position height="0" width="0" x="-27" y="-5"/>      
       </attribute>      
-      <multiplicity id="35" minimum="0" maximum="2147483647">        
-        <position height="15" width="21" x="330" y="-205"/>      
+      <multiplicity id="32" minimum="0" maximum="2147483647">        
+        <position height="15" width="21" x="303" y="-210"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="36">    
+  <association id="33">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="37" name="avion">        
+      <attribute id="34" name="avion">        
         <position height="0" width="0" x="821" y="-136"/>      
       </attribute>      
-      <multiplicity id="38" minimum="0" maximum="1">        
+      <multiplicity id="35" minimum="0" maximum="1">        
         <position height="0" width="0" x="821" y="-136"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="39">    
+  <association id="36">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="40" name="copiloto">        
+      <attribute id="37" name="copiloto">        
         <position height="17" width="44" x="197" y="312"/>      
       </attribute>      
-      <multiplicity id="41" minimum="0" maximum="1">        
+      <multiplicity id="38" minimum="0" maximum="1">        
         <position height="15" width="23" x="355" y="345"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="42">    
+  <association id="39">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="43" name="persona">        
+      <attribute id="40" name="persona">        
         <position height="17" width="49" x="558" y="474"/>      
       </attribute>      
-      <multiplicity id="44" minimum="0" maximum="1">        
+      <multiplicity id="41" minimum="0" maximum="1">        
         <position height="0" width="0" x="42" y="205"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="42">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="43" name="vueloSalida">        
+        <position height="17" width="64" x="713" y="-218"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1">        
+        <position height="15" width="23" x="701" y="-200"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="45">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="46" name="avion">        
-        <position height="0" width="0" x="821" y="-136"/>      
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="46" name="vueloLlegada">        
+        <position height="17" width="73" x="679" y="-296"/>      
       </attribute>      
       <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="15" width="23" x="675" y="-263"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="49" name="avion">        
+        <position height="0" width="0" x="821" y="-136"/>      
+      </attribute>      
+      <multiplicity id="50" minimum="0" maximum="1">        
         <position height="15" width="23" x="1691" y="-54"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="48">    
+  <association id="51">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="49" name="per">        
-        <position height="17" width="26" x="644" y="548"/>      
+      <attribute id="52" name="per">        
+        <position height="17" width="26" x="701" y="544"/>      
       </attribute>      
-      <multiplicity id="50" minimum="0" maximum="1">        
+      <multiplicity id="53" minimum="0" maximum="1">        
         <position height="0" width="0" x="42" y="205"/>      
       </multiplicity>    
     </end>    
