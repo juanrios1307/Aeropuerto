@@ -27,7 +27,8 @@ public class Policia {
 		this.ubicmerca = ubicmerca;
 	}
 	public void arrestar(String person) {
-	
+	if(person==null) {}
+	else {
 		try { 
 			
 			FileInputStream fileIN=new FileInputStream(person);
@@ -47,9 +48,11 @@ public class Policia {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+	}
 	}
 public void mercanciailegal(String mercanci) {
+	if(mercanci==null) {}
+	else {
 		
 		try { 
 			
@@ -70,6 +73,6 @@ public void mercanciailegal(String mercanci) {
 			e.printStackTrace();
 			}
 }
-		
+}	
 }
 
