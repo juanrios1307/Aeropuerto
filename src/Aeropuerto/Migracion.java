@@ -1,9 +1,12 @@
 package Aeropuerto;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class Migracion {
 	
@@ -28,11 +31,18 @@ public class Migracion {
 					String documento;
 					while ((documento = br.readLine()) != null) {
 						if (documento.equals(vueloLlegada[n].getTiquetes()[i].getPersona().getDocumento())) {
-							BufferedReader br = new BufferedReader(new FileReader(""));
-							String documento;
+							try {
+							 BufferedWriter bw = new BufferedWriter(new FileWriter("", false));
+							 FileOutputStream fileOut = new FileOutputStream("C:\\Users\\Decol\\Desktop\\persona1.ser");
+							 ObjectOutputStream out = new ObjectOutputStream(fileOut);
+							 out.writeObject(vueloLlegada[n].getTiquetes()[i].getPersona());
+							 out.close();
+							 fileOut.close();
+							 } catch (IOException e) {
+							 System.out.println(e.getMessage());
+							 }
 						}
 					}
-				
 				 } 
 				 catch (IOException e) {
 					e.printStackTrace();
