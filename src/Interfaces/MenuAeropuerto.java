@@ -67,6 +67,40 @@ public class MenuAeropuerto extends JFrame{
 			}
 			
 		});
+		
+		JButton mecanico=new JButton();
+		mecanico.setText("Mecanico");
+		mecanico.setBounds(110, 170, 250, 30);
+		mecanico.setHorizontalAlignment(SwingConstants.CENTER);
+		mecanico.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(mecanico);
+		mecanico.addActionListener(new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				InterfazMecanico i1=new InterfazMecanico();
+				i1.setVisible(true);
+				setVisible(false);
+			}
+			
+		});
+
+		JButton aeropuerto=new JButton();
+		aeropuerto.setText("Aeropuerto");
+		aeropuerto.setBounds(110, 220, 250, 30);
+		aeropuerto.setHorizontalAlignment(SwingConstants.CENTER);
+		aeropuerto.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(aeropuerto);
+		migracion.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				InterfazAeropuerto i1=new InterfazAeropuerto();
+				i1.setVisible(true);
+				setVisible(false);
+			}
+			
+		});
+		
 	}
 }
