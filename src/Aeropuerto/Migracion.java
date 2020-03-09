@@ -17,7 +17,9 @@ public class Migracion {
 	
 	public void revisarPasajerosVuelo() {
 		if (vueloLlegada!=null) {
-			for(int i;i<=)
+			for(int i=1;i<=vueloLlegada.getTiquetes.length;i++) {
+				
+			}
 		}
 	}
 }
