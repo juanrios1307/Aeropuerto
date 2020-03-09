@@ -23,7 +23,7 @@ public class Migracion {
 	Vuelo[] vueloLlegada;
 	Vuelo[] vueloSalida;
 	
-	public String revisarPasajerosVuelo(int n) {
+	public void revisarPasajerosVuelo(int n) {
 		if (vueloLlegada!=null) {
 			for(int i=1;i<=vueloLlegada[n].getTiquetes().length;i++) {
 				 try {
@@ -39,7 +39,8 @@ public class Migracion {
 							 out.writeObject(vueloLlegada[n].getTiquetes()[i].getPersona());
 							 out.close();
 							 fileOut.close();
-							 return dir;
+							 Policia policia = new Policia();
+							 policia.arrestar(dir);
 							 } catch (IOException e) {
 							 System.out.println(e.getMessage());
 							 }
@@ -50,7 +51,7 @@ public class Migracion {
 					e.printStackTrace();
 				 }
 			}
-		}return null;
+		}
 	}
 	
 	public String revisarMercancia(int n) {
