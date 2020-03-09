@@ -1,4 +1,4 @@
-package aeropuerto;
+package Persona;
 import java.io.*;
 
 public class Mercancia implements Serializable {
