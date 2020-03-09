@@ -4,7 +4,7 @@ import Persona.Persona;
 import tiquetes.Tiquete;
 
 public class Coronavirus {
-	String dirección;
+	String direccion;
 	Vuelo Vuelo;
 	Tiquete[] personas=Vuelo.getTiquetes();
   public boolean buscarenfermo() {
@@ -13,11 +13,11 @@ public class Coronavirus {
 			 return true; }}
 		return false;
 			  }
-public String getDirección() {
-	return dirección;
+public String getDireccion() {
+	return direccion;
 }
-public void setDirección(String dirección) {
-	this.dirección = dirección;
+public void setDireccion(String direccion) {
+	this.direccion = direccion;
 }
 		
 		
