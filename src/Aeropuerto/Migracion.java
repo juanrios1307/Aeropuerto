@@ -23,7 +23,7 @@ public class Migracion {
 	Vuelo[] vueloLlegada;
 	Vuelo[] vueloSalida;
 	
-	public void revisarPasajerosVuelo(int n) {
+	public String revisarPasajerosVuelo(int n) {
 		if (vueloLlegada!=null) {
 			for(int i=1;i<=vueloLlegada[n].getTiquetes().length;i++) {
 				 try {
@@ -33,11 +33,13 @@ public class Migracion {
 						if (documento.equals(vueloLlegada[n].getTiquetes()[i].getPersona().getDocumento())) {
 							try {
 							 BufferedWriter bw = new BufferedWriter(new FileWriter("", false));
-							 FileOutputStream fileOut = new FileOutputStream("C:\\Users\\Decol\\Desktop\\persona1.ser");
+							 String dir = "C:\\Users\\Decol\\Desktop\\persona1.ser";
+							 FileOutputStream fileOut = new FileOutputStream(dir);
 							 ObjectOutputStream out = new ObjectOutputStream(fileOut);
 							 out.writeObject(vueloLlegada[n].getTiquetes()[i].getPersona());
 							 out.close();
 							 fileOut.close();
+							 return dir;
 							 } catch (IOException e) {
 							 System.out.println(e.getMessage());
 							 }
@@ -48,7 +50,11 @@ public class Migracion {
 					e.printStackTrace();
 				 }
 			}
-		}
+		}return null;
+	}
+	
+	public String revisarMercancia(int n) {
+		
 	}
 }
 
