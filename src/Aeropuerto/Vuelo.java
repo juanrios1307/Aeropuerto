@@ -128,9 +128,8 @@ public class Vuelo {
 	public void setPlanDeVuelo(boolean planDeVuelo) {
 		this.planDeVuelo = planDeVuelo;
 	}
-	
-	
-	
-	
-	
+
+	public Tiquete[] getTiquetes() {
+		return tiquetes;
+	}
 }

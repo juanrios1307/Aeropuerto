@@ -17,7 +17,7 @@ public class Migracion {
 	
 	public void revisarPasajerosVuelo() {
 		if (vueloLlegada!=null) {
-			
+			for(int i;i<=)
 		}
 	}
 }
