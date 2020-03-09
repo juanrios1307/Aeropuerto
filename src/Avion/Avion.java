@@ -8,9 +8,7 @@ public abstract class Avion {
 	private String modelo,aerolinea;
 	private boolean planVuelo,metar,notam,pesoBalance,brujula,altimetro,extintores,equipoOxigeno,equipoEmergencia;
 	private double nivAceite;
-	public Avion(double capCarga, double combustMax, double consumo, int horasVuelo, String modelo, String aerolinea,
-			boolean planVuelo, boolean metar, boolean notam, boolean pesoBalance, boolean brujula, boolean altimetro,
-			boolean extintores, boolean equipoOxigeno, boolean equipoEmergencia, double nivAceite) {
+	public Avion(double capCarga, double combustMax, double consumo, int horasVuelo, String modelo, String aerolinea) {
 		super();
 		this.capCarga = capCarga;
 		this.combustMax = combustMax;
@@ -18,16 +16,7 @@ public abstract class Avion {
 		this.horasVuelo = horasVuelo;
 		this.modelo = modelo;
 		this.aerolinea = aerolinea;
-		this.planVuelo = planVuelo;
-		this.metar = metar;
-		this.notam = notam;
-		this.pesoBalance = pesoBalance;
-		this.brujula = brujula;
-		this.altimetro = altimetro;
-		this.extintores = extintores;
-		this.equipoOxigeno = equipoOxigeno;
-		this.equipoEmergencia = equipoEmergencia;
-		this.nivAceite = nivAceite;
+	
 	}
 	public double getCapCarga() {
 		return capCarga;
