@@ -85,13 +85,13 @@ public class MenuAeropuerto extends JFrame{
 			
 		});
 
-		JButton aeropuerto=new JButton();
-		aeropuerto.setText("Aeropuerto");
-		aeropuerto.setBounds(110, 220, 250, 30);
-		aeropuerto.setHorizontalAlignment(SwingConstants.CENTER);
-		aeropuerto.setFont(new Font("arial",Font.ITALIC,20));
-		panel.add(aeropuerto);
-		migracion.addActionListener(new ActionListener() {
+		JButton aero=new JButton();
+		aero.setText("Aeropuerto");
+		aero.setBounds(110, 220, 250, 30);
+		aero.setHorizontalAlignment(SwingConstants.CENTER);
+		aero.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(aero);
+		aero.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -101,6 +101,7 @@ public class MenuAeropuerto extends JFrame{
 			}
 			
 		});
+
 		
 	}
 }
