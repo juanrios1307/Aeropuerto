@@ -6,12 +6,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+import Persona.Mercancia;
 import Persona.Persona;
 
 public class Policia {
 	Persona per;
 	String ubicArres="C:\\Users\\jergf\\Downloads\\Proyectos lenguajes made in windows\\EstructurasDeDatos\\Aeropuerto\\archivosTexto\\arrestados.txt";
-	
+	Mercancia merca;
+	String ubicmerca;
 	public void arrestar(String person) {
 	
 		try { 
@@ -33,7 +35,29 @@ public class Policia {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
+public void mercanciailegal(String mercanci) {
+		
+		try { 
+			
+			FileInputStream fileIN=new FileInputStream(mercanci);
+			ObjectInputStream in= new ObjectInputStream(fileIN);
+		merca=(Mercancia)in.readObject();
+		try {
+			BufferedWriter write=new BufferedWriter(new FileWriter(ubicmerca,true));
+		 write.append(merca.getLote()+"\n");
+	       write.append("------------------------"+"\n");
+		write.close();}
+		catch(IOException e1) {
+			System.out.println(e1.getMessage());}
+		in.close();
+		fileIN.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			}
+}
 		
 }
 
