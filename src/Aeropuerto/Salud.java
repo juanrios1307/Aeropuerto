@@ -1,14 +1,14 @@
 package Aeropuerto;
 
-public class salud {
+public class Salud {
 Coronavirus corona=new Coronavirus();
 Vuelo vuelo;
 boolean o=corona.buscarenfermo();
 public String salud() {
 	if(o) {
-		return "ALERTA avión en cuarentena, posible contagio masivo ";
+		return "ALERTA aviï¿½n en cuarentena, posible contagio masivo ";
 	}
-	else { return " acceso común ningún pasajero contagiado";
+	else { return " acceso comï¿½n ningï¿½n pasajero contagiado";
 				
 		
 	}

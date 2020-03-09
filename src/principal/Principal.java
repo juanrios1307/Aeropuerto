@@ -9,8 +9,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		//MenuAeropuerto menu=new MenuAeropuerto();
-		//menu.setVisible(true);
+		MenuAeropuerto menu=new MenuAeropuerto();
+		menu.setVisible(true);
 //		 try {
 //			 BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Decol\\Desktop\\prueba.txt", false));
 //			 writer.append("sebas" + "\n");
