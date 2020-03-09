@@ -1,4 +1,4 @@
-package aeropuerto;
+package Persona;
 
 public class Maleta {
 	
