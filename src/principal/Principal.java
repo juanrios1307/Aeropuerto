@@ -9,8 +9,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//MenuAeropuerto menu=new MenuAeropuerto();
-		//menu.setVisible(true);
+		MenuAeropuerto menu=new MenuAeropuerto();
+		menu.setVisible(true);
 //		 try {
 //			 BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Decol\\Desktop\\prueba.txt", false));
 //			 writer.append("sebas" + "\n");
@@ -19,7 +19,7 @@ public class Principal {
 //		 } catch (IOException e1) {
 //			 System.out.println(e1);
 //		 }
-		 try {
+/*		 try {
 			 BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Decol\\Desktop\\prueba.txt"));
 			 String st;
 			 String nombre = "";
@@ -30,6 +30,6 @@ public class Principal {
 			 System.out.println(st);
 		 }catch(Exception e) {
 			 System.out.println(e);
-		 }
+		 }*/
 	}
 }

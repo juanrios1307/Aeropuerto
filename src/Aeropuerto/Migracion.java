@@ -27,7 +27,10 @@ public class Migracion {
 					BufferedReader br = new BufferedReader(new FileReader(""));
 					String documento;
 					while ((documento = br.readLine()) != null) {
-						
+						if (documento.equals(vueloLlegada[n].getTiquetes()[i].getPersona().getDocumento())) {
+							BufferedReader br = new BufferedReader(new FileReader(""));
+							String documento;
+						}
 					}
 				
 				 } 
