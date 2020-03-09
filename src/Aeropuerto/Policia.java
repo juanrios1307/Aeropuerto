@@ -14,21 +14,8 @@ public class Policia {
 	String ubicArres="C:\\Users\\jergf\\Downloads\\Proyectos lenguajes made in windows\\EstructurasDeDatos\\Aeropuerto\\archivosTexto\\arrestados.txt";
 	Mercancia merca;
 	String ubicmerca;
-	public String getUbicArres() {
-		return ubicArres;
-	}
-	public void setUbicArres(String ubicArres) {
-		this.ubicArres = ubicArres;
-	}
-	public String getUbicmerca() {
-		return ubicmerca;
-	}
-	public void setUbicmerca(String ubicmerca) {
-		this.ubicmerca = ubicmerca;
-	}
 	public void arrestar(String person) {
-	if(person==null) {}
-	else {
+	
 		try { 
 			
 			FileInputStream fileIN=new FileInputStream(person);
@@ -48,11 +35,9 @@ public class Policia {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+		
 	}
 public void mercanciailegal(String mercanci) {
-	if(mercanci==null) {}
-	else {
 		
 		try { 
 			
@@ -73,6 +58,6 @@ public void mercanciailegal(String mercanci) {
 			e.printStackTrace();
 			}
 }
-}	
+		
 }
 
