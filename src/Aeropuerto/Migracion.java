@@ -2,14 +2,22 @@ package Aeropuerto;
 
 public class Migracion {
 	
-	public Migracion(Vuelo[] vueloLlegada, Vuelo[] vueloSalida) {
+	public Migracion(Vuelo[] vueloSalida) {
+		super();
+		this.vueloSalida = vueloSalida;
+	}
+
+	public Migracion(Vuelo[] vueloLlegada, boolean confirmacion) {
 		super();
 		this.vueloLlegada = vueloLlegada;
-		this.vueloSalida = vueloSalida;
 	}
 
 	Vuelo[] vueloLlegada;
 	Vuelo[] vueloSalida;
 	
-	
+	public void revisarPasajerosVuelo() {
+		if (vueloLlegada!=null) {
+			
+		}
+	}
 }
