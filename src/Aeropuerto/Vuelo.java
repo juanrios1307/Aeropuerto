@@ -36,6 +36,8 @@ public class Vuelo {
 		
 		tiquetes[tiquetes.length-1]=t;
 	}
+	
+	
 
 	public int getCodAeroptSalida() {
 		return codAeroptSalida;

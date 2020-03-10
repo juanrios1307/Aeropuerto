@@ -11,19 +11,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Vuelo;
+
 public class InterfazMigracion extends JFrame{
 	
-	public InterfazMigracion() {
+	public InterfazMigracion(Vuelo v) {
 		this.setSize(500, 400);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes();
+		iniciarComponentes(v);
 	}
 	
-	public void iniciarComponentes() {
+	public void iniciarComponentes(Vuelo v) {
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
@@ -45,7 +47,7 @@ public class InterfazMigracion extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto();
+				MenuAeropuerto i1=new MenuAeropuerto(v);
 				i1.setVisible(true);
 				setVisible(false);
 			}

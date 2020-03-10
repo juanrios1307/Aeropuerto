@@ -14,21 +14,22 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Vuelo;
 import Mecanico.Mecanico;
 
 public class InterfazMecanico extends JFrame{
 	
-	public InterfazMecanico() {
+	public InterfazMecanico(Vuelo v) {
 		this.setSize(500, 400);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes();
+		iniciarComponentes(v);
 	}
 	
-	public void iniciarComponentes() {
+	public void iniciarComponentes(Vuelo v) {
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
@@ -105,10 +106,20 @@ public class InterfazMecanico extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto();
+				InterfazTorreControl i1=new InterfazTorreControl(v);
 				i1.setVisible(true);
 				setVisible(false);
-				if(para1.isSelected()==para2.isSelected()==para3.isSelected()==para4.isSelected()==para5.isSelected()==para6.isSelected()==para7.isSelected() && aceite.getText()!=null) {
+				
+				Mecanico m1=new Mecanico(v);
+				m1.aceite(Double.parseDouble(aceite.getText()));
+				m1.setBrujula(para2.isSelected());
+				m1.setExtintores(para3.isSelected());
+				m1.setAltimetro(para4.isSelected());
+				m1.setEquipoEmergencia(para5.isSelected());
+				m1.setEquipoOxigeno(para6.isSelected());
+				m1.setPesoBalance(para7.isSelected());
+				
+				if(m1.validacion() && m1.pesoAdecuado() && m1.aceite(m1.getAceite())) {
 					//Mecanico.setBrujula(para1.isSelected());
 					//Mecanico.setAceite(Double.parseDouble(aceite.getText()));
 					System.out.println("El avion esta en condiciones para salir");
@@ -129,7 +140,7 @@ public class InterfazMecanico extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto();
+				MenuAeropuerto i1=new MenuAeropuerto(v);
 				i1.setVisible(true);
 				setVisible(false);
 			}

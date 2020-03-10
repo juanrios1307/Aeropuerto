@@ -10,19 +10,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Vuelo;
+
 public class MenuAeropuerto extends JFrame{
 
-	public MenuAeropuerto() {
+	public MenuAeropuerto(Vuelo v) {
 		this.setSize(500, 400);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes();
+		iniciarComponentes(v);
 	}
 	
-	public void iniciarComponentes() {
+	public void iniciarComponentes(Vuelo v) {
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
@@ -44,7 +46,7 @@ public class MenuAeropuerto extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazTorreControl i1=new InterfazTorreControl();
+				InterfazTorreControl i1=new InterfazTorreControl(v);
 				i1.setVisible(true);
 				setVisible(false);
 			}
@@ -61,7 +63,7 @@ public class MenuAeropuerto extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazMigracion i1=new InterfazMigracion();
+				InterfazMigracion i1=new InterfazMigracion(v);
 				i1.setVisible(true);
 				setVisible(false);
 			}
@@ -78,7 +80,7 @@ public class MenuAeropuerto extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazMecanico i1=new InterfazMecanico();
+				InterfazMecanico i1=new InterfazMecanico(v);
 				i1.setVisible(true);
 				setVisible(false);
 			}

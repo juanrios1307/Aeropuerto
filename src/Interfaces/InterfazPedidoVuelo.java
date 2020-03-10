@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Aeropuerto;
+
 public class InterfazPedidoVuelo extends JFrame{
 
 	public InterfazPedidoVuelo() {
@@ -25,6 +27,9 @@ public class InterfazPedidoVuelo extends JFrame{
 	}
 	
 	public void iniciarComponentes() {
+		
+		Aeropuerto air=new Aeropuerto();
+		
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
@@ -52,7 +57,7 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto();
+				MenuAeropuerto i1=new MenuAeropuerto(air.buscarVuelo(Integer.parseInt(vuelo.getText())));
 				i1.setVisible(true);
 				setVisible(false);
 			}
@@ -69,7 +74,7 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto();
+				InterfazAeropuerto i1=new InterfazAeropuerto();
 				i1.setVisible(true);
 				setVisible(false);
 			}

@@ -10,9 +10,28 @@ public class Aeropuerto {
 		this.vueloSalida = vueloSalida;
 	}
 
+	public Aeropuerto() {
+		super();
+	}
+
 	Vuelo[] vueloLlegada;
 	Vuelo[] vueloSalida;
 	int codigoEstadia;
+	
+	public Vuelo buscarVuelo(int cod) {
+		
+		for (int i = 0; i < vueloLlegada.length; i++) {
+			if(cod==vueloLlegada[i].getCodAeroptLlegada())
+				return vueloLlegada[i];
+		}
+		
+		for (int i = 0; i < vueloSalida.length; i++) {
+			if(cod==vueloSalida[i].getCodAeroptLlegada())
+				return vueloSalida[i];
+		}
+		
+		return null;
+	}
 	
 	public double impuestosAeropuertuarios() {
 		long diferencia = vueloLlegada[getCodigoEstadia()].getHoraLlegada().getTime() - vueloSalida[getCodigoEstadia()].getHoraSalida().getTime();

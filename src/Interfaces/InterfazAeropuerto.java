@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Vuelo;
+
 public class InterfazAeropuerto extends JFrame{
 	
 	public InterfazAeropuerto() {
@@ -45,9 +47,9 @@ public class InterfazAeropuerto extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto();
+				/*MenuAeropuerto i1=new MenuAeropuerto();
 				i1.setVisible(true);
-				setVisible(false);
+				setVisible(false);*/
 			}
 			
 		});

@@ -6,9 +6,9 @@ package Mecanico;
 	
 public class Mecanico {
 
-	Persona persona;
-	Vuelo vuelo;
-	Avion avion;
+	private Persona persona;
+	private Vuelo vuelo;
+	private Avion avion;
 	private boolean pesoBalance, brujula, altimetro, extintores, equipoOxigeno, equipoEmergencia;
 	private double aceite;
 	
@@ -42,6 +42,28 @@ public class Mecanico {
 		return false;
 	}
 	
+	
+	
+	public Vuelo getVuelo() {
+		return vuelo;
+	}
+
+
+	public void setVuelo(Vuelo vuelo) {
+		this.vuelo = vuelo;
+	}
+
+
+	public Avion getAvion() {
+		return avion;
+	}
+
+
+	public void setAvion(Avion avion) {
+		this.avion = avion;
+	}
+
+
 	public boolean isPesoBalance() {
 		return pesoBalance;
 	}
