@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import Interfaces.MenuAeropuerto;
+
 
 
 public class Principal {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
-
+/*
 		try {
 			persona p=new persona();
 			p.setNombre("lolazo");
@@ -40,8 +41,7 @@ public class Principal {
 			e.printStackTrace();
 			}
 		}
-=======
-
+*/
 		MenuAeropuerto menu=new MenuAeropuerto();
 		menu.setVisible(true);
 //		 try {
@@ -63,8 +63,7 @@ public class Principal {
 			 System.out.println(st);
 		 }catch(Exception e) {
 			 System.out.println(e);
-		 }*/
->>>>>>> branch 'master' of https://github.com/juanrios1307/Aeropuerto.git
+		 */}
 	}
 
 
