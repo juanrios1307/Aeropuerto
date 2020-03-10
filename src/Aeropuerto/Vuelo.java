@@ -18,8 +18,10 @@ public class Vuelo {
 	private String estado;
 	private boolean planDeVuelo,metar,notam;
 	private Tiquete tiquetes[];
+	private String vuelo;
 	
-	public Vuelo(int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion,Piloto piloto, Piloto copiloto) {
+	public Vuelo(String vuelo,int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion,Piloto piloto, Piloto copiloto) {
+		this.vuelo=vuelo;
 		this.codAeroptSalida = codAeroptSalida;
 		this.codAeroptLlegada = codAeroptLlegada;
 		this.horaSalida = horaSalida;
@@ -31,6 +33,11 @@ public class Vuelo {
 		this.tiquetes=new Tiquete[0];
 	}
 	
+	
+	public String getVuelo() {
+		return vuelo;
+	}
+
 	public void addTiquete(Tiquete t) {
 		tiquetes=Arrays.copyOf(tiquetes, tiquetes.length+1);
 		

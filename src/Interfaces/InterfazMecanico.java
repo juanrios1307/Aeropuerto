@@ -10,10 +10,12 @@ import javax.swing.JCheckBox;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.TorreDeControl;
 import Aeropuerto.Vuelo;
 import Mecanico.Mecanico;
 
@@ -120,9 +122,11 @@ public class InterfazMecanico extends JFrame{
 				m1.setPesoBalance(para7.isSelected());
 				
 				if(m1.validacion() && m1.pesoAdecuado() && m1.aceite(m1.getAceite())) {
-					//Mecanico.setBrujula(para1.isSelected());
-					//Mecanico.setAceite(Double.parseDouble(aceite.getText()));
-					System.out.println("El avion esta en condiciones para salir");
+					JOptionPane.showMessageDialog(null, "El avion está en condiciones para salir");
+					InterfazTorreControl tc=new InterfazTorreControl(v);
+					tc.setVisible(true);
+					setVisible(false);
+					
 ;				}else {
 					System.out.println("El avion no esta en condiciones para salir");
 				}

@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -57,9 +58,19 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto(air.buscarVuelo(Integer.parseInt(vuelo.getText())));
-				i1.setVisible(true);
-				setVisible(false);
+				System.out.println(vuelo.getText());
+				if(air.buscarVueloLlegada(vuelo.getText())!=null) {
+					
+					InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()));
+					i1.setVisible(true);
+					setVisible(false);
+				}else if(air.buscarVueloSalida(vuelo.getText())!=null){
+					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()));
+					i1.setVisible(true);
+					setVisible(false);
+				}else {
+					JOptionPane.showMessageDialog(null, "Vuelo no enontrado");
+				}
 			}
 			
 		});

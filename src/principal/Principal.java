@@ -61,13 +61,13 @@ public class Principal {
 		
 		
 		for (int i = 0; i < vueloSalida.length; i++) {
-			vueloLlegada[i]=new Vuelo(1030+i*2, 2589+i, 0,horaSalida, horaLlegada, avCarga[i], pil[i], pil[i+1]);
-			vueloSalida[i]=new Vuelo(4569+i*2, 8520+i, 2, horaSalida, horaLlegada, avComercial[i], pil[i], pil[i+1]);
+			vueloLlegada[i]=new Vuelo("AV3222"+i,1030+i*2, 2589, 0,horaSalida, horaLlegada, avCarga[i], pil[i], pil[i+1]);
+			vueloSalida[i]=new Vuelo("AV4515"+i,4569+i*2, 8520+i, 2, horaSalida, horaLlegada, avComercial[i], pil[i], pil[i+1]);
 		}
 		for (int i = 0; i < vueloSalida.length; i++) {
 			vueloSalida[i].addTiquete(t[i]);
 		}
-		
+		System.out.println(vueloLlegada[0].getVuelo());
 		
 		Aeropuerto a=new Aeropuerto(vueloLlegada,vueloSalida);
 		

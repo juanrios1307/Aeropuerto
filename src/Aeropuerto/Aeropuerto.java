@@ -18,16 +18,26 @@ public class Aeropuerto {
 	Vuelo[] vueloSalida;
 	int codigoEstadia;
 	
-	public Vuelo buscarVuelo(int cod) {
-		
-		for (int i = 0; i < vueloLlegada.length; i++) {
-			if(cod==vueloLlegada[i].getCodAeroptLlegada())
-				return vueloLlegada[i];
-		}
+	public Vuelo buscarVueloSalida(String cod) {
 		
 		for (int i = 0; i < vueloSalida.length; i++) {
-			if(cod==vueloSalida[i].getCodAeroptLlegada())
+			if(cod.equals(vueloSalida[i].getVuelo())) {
+				System.out.println("Vuelo : "+vueloSalida[i].getVuelo());
 				return vueloSalida[i];
+			}
+		}
+		
+		return null;
+	}
+	
+	public Vuelo buscarVueloLlegada(String cod) {
+		
+		for (int i = 0; i < vueloLlegada.length; i++) {
+			if(cod.equals(vueloLlegada[i].getVuelo())) {
+				System.out.println("Vuelo : "+vueloLlegada[i].getVuelo());
+				return vueloLlegada[i];
+			}
+				
 		}
 		
 		return null;
