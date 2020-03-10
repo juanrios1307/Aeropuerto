@@ -22,7 +22,6 @@ public class Aeropuerto {
 		
 		for (int i = 0; i < vueloSalida.length; i++) {
 			if(cod.equals(vueloSalida[i].getVuelo())) {
-				System.out.println("Vuelo : "+vueloSalida[i].getVuelo());
 				return vueloSalida[i];
 			}
 		}
@@ -34,7 +33,6 @@ public class Aeropuerto {
 		
 		for (int i = 0; i < vueloLlegada.length; i++) {
 			if(cod.equals(vueloLlegada[i].getVuelo())) {
-				System.out.println("Vuelo : "+vueloLlegada[i].getVuelo());
 				return vueloLlegada[i];
 			}
 				

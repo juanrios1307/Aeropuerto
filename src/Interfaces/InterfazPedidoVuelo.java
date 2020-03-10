@@ -58,7 +58,6 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(vuelo.getText());
 				if(air.buscarVueloLlegada(vuelo.getText())!=null) {
 					
 					InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()));

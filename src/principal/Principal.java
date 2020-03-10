@@ -43,8 +43,8 @@ public class Principal {
 		Carga[] avCarga=new Carga[10];
 		Comercial[] avComercial=new Comercial[10];
 		for (int i = 0; i < avCarga.length; i++) {
-			avCarga[i]=new Carga(100, 100, 10, 1, "av15", "Avianca", m);
-			avComercial[i]=new Comercial(200, 100, 10, 4, "air34", "Viva", 100);
+			avCarga[i]=new Carga(100, 100, 10, 1, "av15", "Avianca",1, m);
+			avComercial[i]=new Comercial(200, 100, 10, 4, "air34", "Viva",1, 100);
 		}
 
 		Vuelo[] vueloLlegada=new Vuelo[10];
@@ -67,8 +67,6 @@ public class Principal {
 		for (int i = 0; i < vueloSalida.length; i++) {
 			vueloSalida[i].addTiquete(t[i]);
 		}
-		System.out.println(vueloLlegada[0].getVuelo());
-		
 		Aeropuerto a=new Aeropuerto(vueloLlegada,vueloSalida);
 		
 		InterfazPedidoVuelo menu=new InterfazPedidoVuelo(a);

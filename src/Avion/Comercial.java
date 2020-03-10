@@ -5,9 +5,11 @@ public class Comercial extends Avion{
 
 	private int numPasajeros;
 
+	
+
 	public Comercial(double capCarga, double combustMax, double consumo, int horasVuelo, String modelo,
-			String aerolinea, int numPasajeros) {
-		super(capCarga, combustMax, consumo, horasVuelo, modelo, aerolinea);
+			String aerolinea, double nivAceite, int numPasajeros) {
+		super(capCarga, combustMax, consumo, horasVuelo, modelo, aerolinea, nivAceite);
 		this.numPasajeros = numPasajeros;
 	}
 

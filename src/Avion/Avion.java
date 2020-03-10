@@ -8,8 +8,9 @@ public abstract class Avion {
 	private String modelo,aerolinea;
 	private boolean planVuelo,metar,notam,pesoBalance,brujula,altimetro,extintores,equipoOxigeno,equipoEmergencia;
 	private double nivAceite;
-	public Avion(double capCarga, double combustMax, double consumo, int horasVuelo, String modelo, String aerolinea) {
+	public Avion(double capCarga, double combustMax, double consumo, int horasVuelo, String modelo, String aerolinea,double nivAceite) {
 		super();
+		this.nivAceite=nivAceite;
 		this.capCarga = capCarga;
 		this.combustMax = combustMax;
 		this.consumo = consumo;

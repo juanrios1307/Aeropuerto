@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Migracion;
 import Aeropuerto.TorreDeControl;
 import Aeropuerto.Vuelo;
 import Mecanico.Mecanico;
@@ -96,6 +97,7 @@ public class InterfazMecanico extends JFrame{
 		aceite.setBounds(260,165, 150, 30);
 		aceite.setFont(new Font("arial",Font.ITALIC,15));
 		aceite.setHorizontalAlignment(SwingConstants.LEFT);
+		aceite.setText("0");
 		panel.add(aceite);
 		
 		JButton confirmar=new JButton();
@@ -108,12 +110,9 @@ public class InterfazMecanico extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazTorreControl i1=new InterfazTorreControl(v);
-				i1.setVisible(true);
-				setVisible(false);
 				
 				Mecanico m1=new Mecanico(v);
-				m1.aceite(Double.parseDouble(aceite.getText()));
+				m1.setAceite(Double.parseDouble(aceite.getText()));
 				m1.setBrujula(para2.isSelected());
 				m1.setExtintores(para3.isSelected());
 				m1.setAltimetro(para4.isSelected());
@@ -121,14 +120,24 @@ public class InterfazMecanico extends JFrame{
 				m1.setEquipoOxigeno(para6.isSelected());
 				m1.setPesoBalance(para7.isSelected());
 				
-				if(m1.validacion() && m1.pesoAdecuado() && m1.aceite(m1.getAceite())) {
+				if(m1.validacion() && m1.pesoAdecuado()&& m1.aceite()) {
 					JOptionPane.showMessageDialog(null, "El avion está en condiciones para salir");
-					InterfazTorreControl tc=new InterfazTorreControl(v);
+					
+					InterfazMigracion tc=new InterfazMigracion(v);
 					tc.setVisible(true);
 					setVisible(false);
 					
-;				}else {
-					System.out.println("El avion no esta en condiciones para salir");
+				}else {
+					JOptionPane.showMessageDialog(null, "El avion no está en condiciones para salir, por favor adecuelo");
+					para1.setSelected(false);
+					para2.setSelected(false);
+					para3.setSelected(false);
+					para4.setSelected(false);
+					para5.setSelected(false);
+					para6.setSelected(false);
+					para7.setSelected(false);
+					aceite.setText("0");
+					
 				}
 			}
 			

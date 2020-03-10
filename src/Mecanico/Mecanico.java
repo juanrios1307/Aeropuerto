@@ -15,14 +15,15 @@ public class Mecanico {
 	public Mecanico(Vuelo vuelo) {
 		super();
 		this.vuelo = vuelo;
+		avion=vuelo.getAvion();
 	}
 	
 
 	public boolean validacion() {
-		return (pesoBalance&&brujula&&altimetro&&extintores&&equipoOxigeno&&equipoEmergencia&&aceite(aceite)&&pesoAdecuado());
+		return (pesoBalance&&brujula&&altimetro&&extintores&&equipoOxigeno&&equipoEmergencia&&aceite()&&pesoAdecuado());
 	}
 	
-	public boolean aceite(double aceite) {
+	public boolean aceite() {
 		if ((aceite<=avion.getNivAceite()*1.1)&&(aceite>=avion.getNivAceite()*0.9)) {
 			return true;
 		}
