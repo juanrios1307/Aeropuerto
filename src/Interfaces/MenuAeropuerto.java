@@ -87,23 +87,6 @@ public class MenuAeropuerto extends JFrame{
 			
 		});
 
-		JButton aero=new JButton();
-		aero.setText("Aeropuerto");
-		aero.setBounds(110, 220, 250, 30);
-		aero.setHorizontalAlignment(SwingConstants.CENTER);
-		aero.setFont(new Font("arial",Font.ITALIC,20));
-		panel.add(aero);
-		aero.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				InterfazAeropuerto i1=new InterfazAeropuerto();
-				i1.setVisible(true);
-				setVisible(false);
-			}
-			
-		});
-
 		
 	}
 }

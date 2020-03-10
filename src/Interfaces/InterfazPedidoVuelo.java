@@ -16,19 +16,19 @@ import Aeropuerto.Aeropuerto;
 
 public class InterfazPedidoVuelo extends JFrame{
 
-	public InterfazPedidoVuelo() {
+	public InterfazPedidoVuelo(Aeropuerto a) {
 		this.setSize(500, 270);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes();
+		iniciarComponentes(a);
 	}
 	
-	public void iniciarComponentes() {
+	public void iniciarComponentes(Aeropuerto air) {
 		
-		Aeropuerto air=new Aeropuerto();
+		
 		
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
@@ -74,7 +74,7 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazAeropuerto i1=new InterfazAeropuerto();
+				InterfazAeropuerto i1=new InterfazAeropuerto(air);
 				i1.setVisible(true);
 				setVisible(false);
 			}
