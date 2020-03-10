@@ -7,16 +7,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Aeropuerto;
+import Aeropuerto.Migracion;
+import Aeropuerto.TorreDeControl;
 import Aeropuerto.Vuelo;
 
 public class InterfazTorreControl extends JFrame{
 
-	public InterfazTorreControl(Vuelo v) {
+	public InterfazTorreControl(Vuelo v,boolean b,Aeropuerto a) {
 		this.setSize(500, 400);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
@@ -25,13 +30,14 @@ public class InterfazTorreControl extends JFrame{
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes(v);
+		iniciarComponentes(v, b,a);
 	}
 	
-	public void iniciarComponentes(Vuelo v) {
+	public void iniciarComponentes(Vuelo v,boolean b,Aeropuerto a) {
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
+		
 		
 		JLabel etiqueta=new JLabel();
 		etiqueta.setText("Torre  de Control");
@@ -41,43 +47,43 @@ public class InterfazTorreControl extends JFrame{
 		panel.add(etiqueta);
 		
 		JLabel etiqueta2=new JLabel();
-		etiqueta2.setText("Libro: "+b1.getNombreLibro());
+		etiqueta2.setText("Vuelo: "+v.getVuelo());
 		etiqueta2.setBounds(50, 80, 300, 30);
 		etiqueta2.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta2);
 		
 		JLabel etiqueta3=new JLabel();
-		etiqueta3.setText("Codigo de la Boleta: "+b1.getCodigoBoleta());
+		etiqueta3.setText("Estado vuelo: "+v.getEstado());
 		etiqueta3.setBounds(50, 110, 300, 30);
 		etiqueta3.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta3);
 		
 		JLabel etiqueta4=new JLabel();
-		etiqueta4.setText("ISBN: "+b1.getCodigo());
+		etiqueta4.setText("Aerolinea: "+v.getAvion().getAerolinea());
 		etiqueta4.setBounds(50, 140, 300, 30);
 		etiqueta4.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta4);
 		
 		JLabel etiqueta5=new JLabel();
-		etiqueta5.setText("Nombre: "+b1.getNombreUsuario());
+		etiqueta5.setText("Documento piloto: "+v.getPiloto().getDocumento());
 		etiqueta5.setBounds(50, 170, 300, 30);
 		etiqueta5.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta5);
 		
 		JLabel etiqueta8=new JLabel();
-		etiqueta8.setText("Cedula: "+b1.getCedulaUsuario());
+		etiqueta8.setText("Personal a bordo: "+v.getTiquetes().length+2);
 		etiqueta8.setBounds(50, 200, 300, 30);
 		etiqueta8.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta8);
 		
 		JLabel etiqueta6=new JLabel();
-		etiqueta6.setText("Fecha de prestamo: "+b1.getFechaPrestamo());
+		etiqueta6.setText("Codigo "+(b?"destino: "+v.getCodAeroptLlegada():"origen: "+v.getCodAeroptSalida()));
 		etiqueta6.setBounds(50, 230, 300, 30);
 		etiqueta6.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta6);
 		
 		JLabel etiqueta7=new JLabel();
-		etiqueta7.setText("Fecha de entrega: "+b1.getFechaEntrega());
+		etiqueta7.setText("Hora "+(b?"despegue: "+v.getHoraSalida():"aterrizaje: "+v.getHoraLlegada()));
 		etiqueta7.setBounds(50, 260, 300, 30);
 		etiqueta7.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta7);
@@ -88,20 +94,70 @@ public class InterfazTorreControl extends JFrame{
 		lblprestamo.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(lblprestamo);
 		
+		JCheckBoxMenuItem para1=new JCheckBoxMenuItem("Plan de Vuelo",false);
+		para1.setBounds(50,50, 120, 50);
+		para1.setFont(new Font("arial",Font.ITALIC,15));
+		para1.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton menu=new JButton();
-		menu.setText("Regresar");
-		menu.setBounds(110, 300, 250, 30);
-		menu.setHorizontalAlignment(SwingConstants.CENTER);
-		menu.setFont(new Font("arial",Font.ITALIC,20));
-		panel.add(menu);
-		menu.addActionListener(new ActionListener() {
+		
+		JCheckBoxMenuItem para2=new JCheckBoxMenuItem("Notam",false);
+		para2.setBounds(50,50, 120, 50);
+		para2.setFont(new Font("arial",Font.ITALIC,15));
+		para2.setHorizontalAlignment(SwingConstants.LEFT);
+		
+		
+		JCheckBoxMenuItem para3=new JCheckBoxMenuItem("Metar",false);
+		para2.setBounds(50,50, 120, 50);
+		para2.setFont(new Font("arial",Font.ITALIC,15));
+		para2.setHorizontalAlignment(SwingConstants.LEFT);
+		
+		
+		if(b) {
+			panel.add(para1);
+			panel.add(para2);
+			panel.add(para3);
+		}else {
+			
+		}
+		JButton permitir=new JButton();
+		permitir.setText("Permitir "+(b?"despegue":"aterrizaje"));
+		permitir.setBounds(110, 300, 250, 30);
+		permitir.setHorizontalAlignment(SwingConstants.CENTER);
+		permitir.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(permitir);
+		permitir.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto(v);
-				i1.setVisible(true);
-				setVisible(false);
+				TorreDeControl tc=new TorreDeControl();
+				if(b) {
+					tc.setPlanVuelo(para1.isSelected());
+					tc.setNotam(para2.isSelected());
+					tc.setMetar(para3.isSelected());
+				}else {
+					
+				}
+				
+				if(b) {
+					JOptionPane.showMessageDialog(null, "El avion despegó");
+					int bool=JOptionPane.showConfirmDialog(null, "Desea continuar operaciones?");
+					if(bool==0) {
+						InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
+						i1.setVisible(true);
+						setVisible(false);
+					}else {
+						setVisible(false);
+					}
+				}else {
+					JOptionPane.showMessageDialog(null, "El avion aterrizó");
+					tc.setAvionAproximando(true);
+					
+					InterfazMigracion i1=new InterfazMigracion(v,a);
+					i1.setVisible(true);
+					setVisible(false);
+					
+				}
+	
 			}
 			
 		});

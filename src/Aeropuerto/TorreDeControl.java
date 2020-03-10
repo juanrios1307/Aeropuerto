@@ -10,7 +10,42 @@ public class TorreDeControl {
 	Vuelo vuelo;
 	
 	private boolean notam,avionAproximando;
+	private boolean planVuelo,metar;
 	
+	
+	
+	public boolean isAvionAproximando() {
+		return avionAproximando;
+	}
+
+	public void setAvionAproximando(boolean avionAproximando) {
+		this.avionAproximando = avionAproximando;
+	}
+
+	public void setNotam(boolean notam) {
+		this.notam = notam;
+	}
+
+	public void setPlanVuelo(boolean planVuelo) {
+		this.planVuelo = planVuelo;
+	}
+
+	public void setMetar(boolean metar) {
+		this.metar = metar;
+	}
+
+	public boolean isNotam() {
+		return notam;
+	}
+
+	public boolean isPlanVuelo() {
+		return planVuelo;
+	}
+
+	public boolean isMetar() {
+		return metar;
+	}
+
 	public void asignarNotamVuelo(boolean notam) {
 		vuelo.setNotam(notam);
 	}

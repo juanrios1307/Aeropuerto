@@ -60,11 +60,11 @@ public class InterfazPedidoVuelo extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				if(air.buscarVueloLlegada(vuelo.getText())!=null) {
 					
-					InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()));
+					InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
 					i1.setVisible(true);
 					setVisible(false);
 				}else if(air.buscarVueloSalida(vuelo.getText())!=null){
-					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()));
+					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
 					i1.setVisible(true);
 					setVisible(false);
 				}else {

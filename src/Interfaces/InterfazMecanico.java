@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Aeropuerto.Aeropuerto;
 import Aeropuerto.Migracion;
 import Aeropuerto.TorreDeControl;
 import Aeropuerto.Vuelo;
@@ -22,17 +23,17 @@ import Mecanico.Mecanico;
 
 public class InterfazMecanico extends JFrame{
 	
-	public InterfazMecanico(Vuelo v) {
+	public InterfazMecanico(Vuelo v,Aeropuerto a) {
 		this.setSize(500, 400);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes(v);
+		iniciarComponentes(v,a);
 	}
 	
-	public void iniciarComponentes(Vuelo v) {
+	public void iniciarComponentes(Vuelo v,Aeropuerto a) {
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
@@ -123,7 +124,7 @@ public class InterfazMecanico extends JFrame{
 				if(m1.validacion() && m1.pesoAdecuado()&& m1.aceite()) {
 					JOptionPane.showMessageDialog(null, "El avion está en condiciones para salir");
 					
-					InterfazMigracion tc=new InterfazMigracion(v);
+					InterfazMigracion tc=new InterfazMigracion(v,a);
 					tc.setVisible(true);
 					setVisible(false);
 					
@@ -143,22 +144,6 @@ public class InterfazMecanico extends JFrame{
 			
 		});
 		
-		JButton menu=new JButton();
-		menu.setText("Regresar");
-		menu.setBounds(110, 300, 250, 30);
-		menu.setHorizontalAlignment(SwingConstants.CENTER);
-		menu.setFont(new Font("arial",Font.ITALIC,20));
-		panel.add(menu);
-		menu.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MenuAeropuerto i1=new MenuAeropuerto(v);
-				i1.setVisible(true);
-				setVisible(false);
-			}
-			
-		});
 		
 			
 		}
