@@ -28,21 +28,21 @@ public class Migracion {
 			for(int i=1;i<=vueloLlegada[n].getTiquetes().length;i++) {
 				 try {
 					BufferedReader br = new BufferedReader(new FileReader(""));
-					String documento;
+					String documento ;
 					while ((documento = br.readLine()) != null) {
 						if (documento.equals(vueloLlegada[n].getTiquetes()[i].getPersona().getDocumento())) {
 							try {
-							 BufferedWriter bw = new BufferedWriter(new FileWriter("", false));
-							 String dir = "C:\\Users\\Decol\\Desktop\\persona1.ser";
-							 FileOutputStream fileOut = new FileOutputStream(dir);
-							 ObjectOutputStream out = new ObjectOutputStream(fileOut);
-							 out.writeObject(vueloLlegada[n].getTiquetes()[i].getPersona());
-							 out.close();
-							 fileOut.close();
-							 Policia policia = new Policia();
-							 policia.arrestar(dir);
+								String dir = "";
+								BufferedWriter bw = new BufferedWriter(new FileWriter(dir, false));
+								FileOutputStream fileOut = new FileOutputStream(dir);
+								ObjectOutputStream out = new ObjectOutputStream(fileOut);
+								out.writeObject(vueloLlegada[n].getTiquetes()[i].getPersona());
+								out.close();
+								fileOut.close();
+							 	Policia policia = new Policia();
+							 	policia.arrestar(dir);
 							 } catch (IOException e) {
-							 System.out.println(e.getMessage());
+								 System.out.println(e.getMessage());
 							 }
 						}
 					}
@@ -52,6 +52,50 @@ public class Migracion {
 				 }
 			}
 		}
+	}
+	
+	public void revisarMaletas(int n) {
+		if (vueloLlegada!=null) {
+			for(int i=1;i<=vueloLlegada[n].getTiquetes().length;i++) {
+				
+				for(int j=1;j<=vueloLlegada[n].getTiquetes()[i].getPersona().getMaletas().length;j++) {
+					
+					for(int k=1;k<=vueloLlegada[n].getTiquetes()[i].getPersona().getMaletas()[j].getMercancias().length;k++) {
+					
+						 try {
+								BufferedReader br = new BufferedReader(new FileReader(""));
+								String lote;
+								while ((lote = br.readLine()) != null) {
+									if (lote.equals(vueloLlegada[n].getTiquetes()[i].getPersona().getMaletas()[j].getMercancias()[k])) {
+										try {
+											String dir = "";
+											BufferedWriter bw = new BufferedWriter(new FileWriter(dir, false));
+											FileOutputStream fileOut = new FileOutputStream(dir);
+											ObjectOutputStream out = new ObjectOutputStream(fileOut);
+											out.writeObject(vueloLlegada[n].getTiquetes()[i].getPersona().getMaletas()[j].getMercancias()[k]);
+											out.close();
+											fileOut.close();
+										 	Policia policia = new Policia();
+										 	policia.mercanciailegal(dir);
+										} catch (IOException e) {
+											System.out.println(e.getMessage());
+										}
+									}
+								}
+						 } 
+							 catch (IOException e) {
+								e.printStackTrace();
+							 }
+						}
+					}
+				}
+			}
+		}	
+	
+	public boolean maletaIlegal() {
+		for(int k=1;k<=vueloLlegada[n].getTiquetes()[i].getPersona().getMaletas()[j].getMercancias().length;k++) {
+		}
+		return true;
 	}
 	
 	public String revisarMercancia(int n) {
