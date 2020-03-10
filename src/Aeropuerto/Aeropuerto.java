@@ -58,5 +58,22 @@ public class Aeropuerto {
 	public void setCodigoEstadia(int codigoEstadia) {
 		this.codigoEstadia = codigoEstadia;
 	}
+
+	public Vuelo[] getVueloLlegada() {
+		return vueloLlegada;
+	}
+
+	public void setVueloLlegada(Vuelo[] vueloLlegada) {
+		this.vueloLlegada = vueloLlegada;
+	}
+
+	public Vuelo[] getVueloSalida() {
+		return vueloSalida;
+	}
+
+	public void setVueloSalida(Vuelo[] vueloSalida) {
+		this.vueloSalida = vueloSalida;
+	}
+	
 	
 }
