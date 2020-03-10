@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import Interfaces.InterfazPedidoVuelo;
 import Interfaces.MenuAeropuerto;
 
 
@@ -42,7 +43,7 @@ public class Principal {
 			}
 		}
 */
-		MenuAeropuerto menu=new MenuAeropuerto();
+		InterfazPedidoVuelo menu=new InterfazPedidoVuelo();
 		menu.setVisible(true);
 //		 try {
 //			 BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Decol\\Desktop\\prueba.txt", false));
