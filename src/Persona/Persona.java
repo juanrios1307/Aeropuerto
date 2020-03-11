@@ -34,6 +34,35 @@ public class Persona implements Serializable {
 			this.maletas = maletas;
 		}
 		
+		public Persona(String nombre, String documento, String nacionalidad, int edad, boolean enfermo) {
+			super();
+			this.nombre = nombre;
+			this.documento = documento;
+			this.nacionalidad = nacionalidad;
+			this.edad = edad;
+			this.enfermo = enfermo;
+		}
+		
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+		public void setDocumento(String documento) {
+			this.documento = documento;
+		}
+		public void setNacionalidad(String nacionalidad) {
+			this.nacionalidad = nacionalidad;
+		}
+		public void setEdad(int edad) {
+			this.edad = edad;
+		}
+		public void setEnfermo(boolean enfermo) {
+			this.enfermo = enfermo;
+		}
+		public void setMaletas(Maleta[] maletas) {
+			this.maletas = maletas;
+		}
+		
+		
 		
 		
 }

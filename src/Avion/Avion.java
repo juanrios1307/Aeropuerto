@@ -1,14 +1,14 @@
 
 package Avion;
 
-public abstract class Avion {
+public class Avion {
 	
 	private double capCarga,combustMax,consumo;
 	private int horasVuelo;
-	private String modelo,aerolinea;
+	private String modelo,aerolinea,matricula;
 	private boolean planVuelo,metar,notam,pesoBalance,brujula,altimetro,extintores,equipoOxigeno,equipoEmergencia;
 	private double nivAceite;
-	public Avion(double capCarga, double combustMax, double consumo, int horasVuelo, String modelo, String aerolinea,double nivAceite) {
+	public Avion(double capCarga, double combustMax, double consumo, int horasVuelo,String matricula ,String modelo, String aerolinea,double nivAceite) {
 		super();
 		this.nivAceite=nivAceite;
 		this.capCarga = capCarga;
@@ -17,7 +17,23 @@ public abstract class Avion {
 		this.horasVuelo = horasVuelo;
 		this.modelo = modelo;
 		this.aerolinea = aerolinea;
+		this.matricula=matricula;
 	
+	}
+	
+	
+	
+	public Avion() {
+		super();
+	}
+
+
+
+	public String getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 	public double getCapCarga() {
 		return capCarga;

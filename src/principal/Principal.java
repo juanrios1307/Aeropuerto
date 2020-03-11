@@ -37,14 +37,14 @@ public class Principal {
 		for (int i = 0; i < m.length; i++) {
 			m[i]=new Mercancia(true, 10);
 			p[i]=new Persona("Juan"+i, "14789"+(i-1), "Colombia", (int)(Math.random()*100)+1, i%2==0?true:false, maleta);
-			pil[i]=new Piloto("Juan"+i, "14789"+(i-1), "Colombia", (int)(Math.random()*100)+1, false, maleta, true);
+			pil[i]=new Piloto("Juan"+i, "14789"+(i-1), "Colombia", (int)(Math.random()*100)+1, false, maleta, "QWERTY45"+i);
  		}
 		
 		Carga[] avCarga=new Carga[10];
 		Comercial[] avComercial=new Comercial[10];
 		for (int i = 0; i < avCarga.length; i++) {
-			avCarga[i]=new Carga(100, 100, 10, 1, "av15", "Avianca",1);
-			avComercial[i]=new Comercial(200, 100, 10, 4, "air34", "Viva",1, 100);
+			avCarga[i]=new Carga(100, 100, 10, 1,"AD45QW"+i ,"av15", "Avianca",1);
+			avComercial[i]=new Comercial(200, 100, 10, 4,"SDF78F"+i ,"air34", "Viva",1, 100);
 		}
 
 		Vuelo[] vueloLlegada=new Vuelo[10];
@@ -72,7 +72,7 @@ public class Principal {
 			}
 		}
 		
-		Aeropuerto a=new Aeropuerto(vueloLlegada,vueloSalida);
+		Aeropuerto a=new Aeropuerto(vueloLlegada,vueloSalida,avCarga,pil);
 		return a;
 	}
 	
