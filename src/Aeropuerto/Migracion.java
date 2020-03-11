@@ -28,7 +28,8 @@ public class Migracion {
 		this.vuelo = vuelo;
 	}
 
-	public void revisarPasajerosVuelo() {
+	public boolean revisarPasajerosVuelo() {
+		int cont=0;
 		if (vuelo!=null) {
 			for(int i=1;i<=vuelo.getTiquetes().length;i++) {
 				 try {
@@ -42,7 +43,11 @@ public class Migracion {
 								FileOutputStream fileOut = new FileOutputStream(dir);
 								ObjectOutputStream out = new ObjectOutputStream(fileOut);
 								out.writeObject(vuelo.getTiquetes()[i].getPersona());
+								if(!out.toString().isEmpty()) {
+									cont++;
+								}
 								out.close();
+						
 								fileOut.close();
 							 	Policia policia = new Policia();
 							 	policia.arrestar(dir);
@@ -57,9 +62,14 @@ public class Migracion {
 				 }
 			}
 		}
+		if(cont>0) {
+			return true;
+		}else 
+			return false;
 	}
 	
-	public void revisarMaletas() {
+	public boolean revisarMaletas() {
+		int cont=0;
 		if (vuelo!=null) {
 			for(int i=1;i<=vuelo.getTiquetes().length;i++) {
 				
@@ -78,6 +88,9 @@ public class Migracion {
 											FileOutputStream fileOut = new FileOutputStream(dir);
 											ObjectOutputStream out = new ObjectOutputStream(fileOut);
 											out.writeObject(vuelo.getTiquetes()[i].getPersona().getMaletas()[j].getMercancias()[k]);
+											if(!out.toString().isEmpty()) {
+												cont++;
+											}
 											out.close();
 											fileOut.close();
 										 	Policia policia = new Policia();
@@ -95,9 +108,14 @@ public class Migracion {
 					}
 				}
 			}
+		if(cont>0) {
+			return true;
+		}else
+			return false;
 		}	
 	
-	public String revisarMercancia() {
+	public boolean revisarMercancia() {
+		int cont=0;
 		for(int i=1;i<=vuelo.getMercancia().length;i++) {
 			
 			 try {
@@ -111,10 +129,13 @@ public class Migracion {
 								FileOutputStream fileOut = new FileOutputStream(dir);
 								ObjectOutputStream out = new ObjectOutputStream(fileOut);
 								out.writeObject(vuelo.getTiquetes()[i].getPersona().getMaletas()[j].getMercancias()[k]);
+								if(!out.toString().isEmpty()) {
+									cont++;
+								}
 								out.close();
 								fileOut.close();
 							 	Policia policia = new Policia();
-							 	policia.mercanciailegal(dir);
+							 	return policia.mercanciailegal(dir);
 							} catch (IOException e) {
 								System.out.println(e.getMessage());
 							}
@@ -125,6 +146,11 @@ public class Migracion {
 					e.printStackTrace();
 				 }
 			}
+		if(cont>0) {
+			return true;
+		}else
+			return false;
 	}
+
 }
 

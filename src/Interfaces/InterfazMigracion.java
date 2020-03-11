@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -17,6 +18,8 @@ import Aeropuerto.Aeropuerto;
 import Aeropuerto.Migracion;
 import Aeropuerto.Policia;
 import Aeropuerto.Vuelo;
+import Avion.Carga;
+import Avion.Comercial;
 
 public class InterfazMigracion extends JFrame{
 	
@@ -32,12 +35,9 @@ public class InterfazMigracion extends JFrame{
 	
 	public void iniciarComponentes(Vuelo v,Aeropuerto a) {
 		Migracion migra=new Migracion(v);
-		Policia poli=new Policia();
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
-		
-		
 		
 		JLabel etiqueta=new JLabel();
 		etiqueta.setText("Migracion");
@@ -48,12 +48,16 @@ public class InterfazMigracion extends JFrame{
 		
 		ImageIcon alerta =new ImageIcon("iconalert.png");
 		
+		if(migra.getVuelo().getTiquetes().length>0){
+			
+		
 		JButton menu=new JButton();
 		menu.setText("Continuar");
 		menu.setBounds(110, 350, 250, 30);
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
 		menu.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(menu);
+		menu.setVisible(false);
 		menu.addActionListener(new ActionListener() {
 
 			@Override
@@ -66,7 +70,7 @@ public class InterfazMigracion extends JFrame{
 			
 		});
 		
-		JButton alertai=new JButton();
+		JLabel alertai=new JLabel();
 		alertai.setBounds(110, 120, 250,80);
 		alertai.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
 		alertai.setText("Arrestar tripulacion");
@@ -83,13 +87,16 @@ public class InterfazMigracion extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//migra.revisarPasajerosVuelo(n);
-				alertai.setVisible(true);
+				if(migra.revisarMercancia()) {
+					alertai.setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "No se encontraron mercancias reportadas");
+				}
 			}
 			
 		});
 
-		JButton alerta2=new JButton();
+		JLabel alerta2=new JLabel();
 		alerta2.setBounds(110, 260, 250,80);
 		alerta2.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
 		alerta2.setText("Arrestar Pasajeros");
@@ -106,12 +113,65 @@ public class InterfazMigracion extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//migra.revisarPasajerosVuelo(n);
-				alerta2.setVisible(true);
+				if(migra.revisarPasajerosVuelo()) {
+					alertai.setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "No se encontraron personas reportadas");
+				}
 			}
 			
 		});
 		
+		}else {
+			
+			setSize(500,300);
+
+			JButton menu=new JButton();
+			menu.setText("Continuar");
+			menu.setBounds(110, 210, 250, 30);
+			menu.setHorizontalAlignment(SwingConstants.CENTER);
+			menu.setFont(new Font("arial",Font.ITALIC,20));
+			menu.setVisible(false);
+			panel.add(menu);
+			menu.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					InterfazTorreControl i1=new InterfazTorreControl(v,true,a);
+					i1.setVisible(true);
+					setVisible(false);
+					
+				}
+				
+			});
+			
+			JLabel alertai=new JLabel();
+			alertai.setBounds(110, 120, 250,80);
+			alertai.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
+			alertai.setText("Arrestar tripulacion");
+			alertai.setVisible(false);
+			panel.add(alertai);
+			
+			JButton revisar=new JButton();
+			revisar.setText("Revisar Mercancias Avion");
+			revisar.setBounds(110, 80, 250, 30);
+			revisar.setHorizontalAlignment(SwingConstants.CENTER);
+			revisar.setFont(new Font("arial",Font.ITALIC,20));
+			panel.add(revisar);
+			revisar.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					if(migra.revisarPasajerosVuelo()) {
+						alertai.setVisible(true);
+					}else {
+						JOptionPane.showMessageDialog(null, "No se encontraron mercancias reportadas");
+					}
+					
+				}
+				
+			});
+
 		}
 		
 	}
