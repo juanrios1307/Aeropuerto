@@ -149,4 +149,14 @@ public class Vuelo {
 	public Tiquete[] getTiquetes() {
 		return tiquetes;
 	}
+
+
+	public Mercancia[] getMercancia() {
+		return mercancia;
+	}
+
+
+	public void setMercancia(Mercancia[] mercancia) {
+		this.mercancia = mercancia;
+	}
 }
