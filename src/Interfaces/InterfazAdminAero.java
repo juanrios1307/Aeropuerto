@@ -15,10 +15,10 @@ import javax.swing.SwingConstants;
 
 import Aeropuerto.Aeropuerto;
 
-public class InterfazPedidoVuelo extends JFrame{
-
-	public InterfazPedidoVuelo(Aeropuerto a) {
-		this.setSize(500, 350);
+public class InterfazAdminAero extends JFrame{
+	
+	public InterfazAdminAero(Aeropuerto a) {
+		this.setSize(400, 350);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
@@ -29,28 +29,21 @@ public class InterfazPedidoVuelo extends JFrame{
 	
 	public void iniciarComponentes(Aeropuerto air) {
 		
-		
-		
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		this.getContentPane().add(panel);
 		
 		JLabel etiqueta=new JLabel();
-		etiqueta.setText("Ingrese Vuelo");
-		etiqueta.setBounds(85, 10, 300, 50);
+		etiqueta.setText("Administrar Aeropuerto");
+		etiqueta.setBounds(0, 10, 400, 50);
 		etiqueta.setHorizontalAlignment(SwingConstants.CENTER);
 		etiqueta.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(etiqueta);
 		
-		JTextField vuelo = new JTextField();
-		vuelo.setBounds(85,60, 300, 30);
-		vuelo.setFont(new Font("arial",Font.ITALIC,15));
-		vuelo.setHorizontalAlignment(SwingConstants.LEFT);
-		panel.add(vuelo);
 		
 		JButton menu=new JButton();
-		menu.setText("Confirmar");
-		menu.setBounds(110, 110, 250, 30);
+		menu.setText("Agregar Tiquetes");
+		menu.setBounds(40, 80, 300, 50);
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
 		menu.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(menu);
@@ -58,25 +51,12 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(air.buscarVueloLlegada(vuelo.getText())!=null) {
-					
-					InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
-					i1.setVisible(true);
-					setVisible(false);
-				}else if(air.buscarVueloSalida(vuelo.getText())!=null){
-					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
-					i1.setVisible(true);
-					setVisible(false);
-				}else {
-					JOptionPane.showMessageDialog(null, "Vuelo no enontrado");
-				}
-			}
 			
-		});
+			}});
 		
 		JButton aero=new JButton();
-		aero.setText("Aeropuerto");
-		aero.setBounds(110, 170, 250, 30);
+		aero.setText("Agregar Mercancia");
+		aero.setBounds(40, 160, 300, 50);
 		aero.setHorizontalAlignment(SwingConstants.CENTER);
 		aero.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(aero);
@@ -84,16 +64,14 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazAeropuerto i1=new InterfazAeropuerto(air);
-				i1.setVisible(true);
-				setVisible(false);
+			
 			}
 			
 		});
 		
 		JButton admin=new JButton();
-		admin.setText("Administar");
-		admin.setBounds(110, 230, 250, 30);
+		admin.setText("Regresar");
+		admin.setBounds(60, 250, 260, 30);
 		admin.setHorizontalAlignment(SwingConstants.CENTER);
 		admin.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(admin);
@@ -101,13 +79,12 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazAdminAero i1=new InterfazAdminAero(air);
-				i1.setVisible(true);
-				setVisible(false);
+			InterfazPedidoVuelo i1=new InterfazPedidoVuelo(air);
+			i1.setVisible(true);
+			setVisible(false);
 			}
 			
 		});
 
 	}
-	
 }
