@@ -68,6 +68,7 @@ public class Migracion {
 			return false;
 	}
 	
+	@SuppressWarnings("unlikely-arg-type")
 	public boolean revisarMaletas() {
 		int cont=0;
 		if (vuelo!=null) {
