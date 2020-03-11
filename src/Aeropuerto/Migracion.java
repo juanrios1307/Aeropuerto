@@ -15,8 +15,19 @@ public class Migracion {
 		this.vuelo = vuelo;
 	}
 
+	public Migracion() {
+	}
+
 	Vuelo vuelo;
 	
+	public Vuelo getVuelo() {
+		return vuelo;
+	}
+
+	public void setVuelo(Vuelo vuelo) {
+		this.vuelo = vuelo;
+	}
+
 	public void revisarPasajerosVuelo() {
 		if (vuelo!=null) {
 			for(int i=1;i<=vuelo.getTiquetes().length;i++) {

@@ -1,5 +1,6 @@
 package Interfaces;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.Scrollable;
 import javax.swing.SwingConstants;
 
 import Aeropuerto.Vuelo;
@@ -17,7 +20,7 @@ import Aeropuerto.Vuelo;
 public class InterfazAeropuerto extends JFrame{
 	
 	public InterfazAeropuerto(Aeropuerto a) {
-		this.setSize(500, 600);
+		this.setSize(745, 590);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
@@ -70,25 +73,36 @@ public class InterfazAeropuerto extends JFrame{
 		
 		JLabel etiqueta=new JLabel();
 		etiqueta.setText("Aeropuerto");
-		etiqueta.setBounds(85, 10, 300, 50);
+		etiqueta.setBounds(0, 10, 745, 50);
 		etiqueta.setHorizontalAlignment(SwingConstants.CENTER);
-		etiqueta.setFont(new Font("arial",Font.ITALIC,20));
+		etiqueta.setFont(new Font("arial",Font.ITALIC,25));
 		panel.add(etiqueta);
 		
+		JLabel salida=new JLabel();
+		salida.setText("Arrivals / Llegadas");
+		salida.setBounds(0, 60, 745, 20);
+		salida.setHorizontalAlignment(SwingConstants.CENTER);
+		salida.setFont(new Font("arial",Font.ITALIC,15));
+		panel.add(salida);
 		
 		JTable estadosVuelo=new JTable(datosVuelo,nombresColumnas);
-		estadosVuelo.setBounds(45, 300, 400, 220);
-		estadosVuelo.setName("Departures/Salidas");
+		estadosVuelo.setBounds(45, 300, 645, 160);
 		panel.add(estadosVuelo);
 		
+		JLabel llegadas=new JLabel();
+		llegadas.setText("Departures / Salidas");
+		llegadas.setBounds(0, 270, 745, 20);
+		llegadas.setHorizontalAlignment(SwingConstants.CENTER);
+		llegadas.setFont(new Font("arial",Font.ITALIC,15));
+		panel.add(llegadas);
+		
 		JTable estadosVuelo1=new JTable(datosVuelo1,nombresColumnas1);
-		estadosVuelo1.setBounds(45, 60, 400, 220);
-		estadosVuelo1.setName("Departures/Salidas");
+		estadosVuelo1.setBounds(45, 90, 645, 160);
 		panel.add(estadosVuelo1);
 		
 		JButton menu=new JButton();
 		menu.setText("Regresar");
-		menu.setBounds(120, 520, 250, 30);
+		menu.setBounds(245, 490, 250, 30);
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
 		menu.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(menu);

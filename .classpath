@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="uml"/>
 	<classpathentry kind="src" path="archivosTexto"/>
+	<classpathentry kind="src" path="Imagenes"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
