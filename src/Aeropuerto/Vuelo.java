@@ -36,7 +36,14 @@ public class Vuelo {
 		this.mercancia=new Mercancia[0];
 	}
 	
-	
+	public Vuelo() {
+		super();
+	}
+
+	public void setVuelo(String vuelo) {
+		this.vuelo = vuelo;
+	}
+
 	public String getVuelo() {
 		return vuelo;
 	}

@@ -1,13 +1,19 @@
 package Aeropuerto;
 
+import java.util.Arrays;
+
+import Avion.Avion;
 import 	Mecanico.Mecanico;
+import Persona.Piloto;
+import tiquetes.Tiquete;
 
 public class Aeropuerto {
 	
-	public Aeropuerto(Vuelo[] vueloLlegada, Vuelo[] vueloSalida) {
+	public Aeropuerto(Vuelo[] vueloLlegada, Vuelo[] vueloSalida,Avion[] avion,Piloto[] p) {
 		super();
 		this.vueloLlegada = vueloLlegada;
 		this.vueloSalida = vueloSalida;
+		this.avion=avion;
 	}
 
 	public Aeropuerto() {
@@ -16,7 +22,43 @@ public class Aeropuerto {
 
 	Vuelo[] vueloLlegada;
 	Vuelo[] vueloSalida;
+	Avion[] avion;
+	Piloto[] piloto;
 	int codigoEstadia;
+	
+	public void addVuelo(Vuelo v,boolean b) {
+		if(b) {
+			vueloSalida=Arrays.copyOf(vueloSalida, vueloSalida.length+1);
+			
+			vueloSalida[vueloSalida.length-1]=v;
+		}else {
+			vueloLlegada=Arrays.copyOf(vueloLlegada, vueloLlegada.length+1);
+			
+			vueloLlegada[vueloLlegada.length-1]=v;
+		}
+		
+	}
+	
+	public void addAvion(Avion a) {	
+			avion=Arrays.copyOf(avion, avion.length+1);
+			avion[avion.length-1]=a;
+	}
+	
+	public void addPiloto(Piloto p) {	
+		piloto=Arrays.copyOf(piloto, piloto.length+1);
+		piloto[piloto.length-1]=p;
+	}
+
+	public Piloto buscarPiloto(String cod) {
+	
+		for (int i = 0; i < piloto.length; i++) {
+			if(cod.equals(piloto[i].getLicencia())) {
+				return piloto[i];
+			}
+		}
+		
+		return null;
+	}
 	
 	public Vuelo buscarVueloSalida(String cod) {
 		
@@ -29,15 +71,27 @@ public class Aeropuerto {
 		return null;
 	}
 	
+	
+	
 	public Vuelo buscarVueloLlegada(String cod) {
 		
 		for (int i = 0; i < vueloLlegada.length; i++) {
 			if(cod.equals(vueloLlegada[i].getVuelo())) {
 				return vueloLlegada[i];
-			}
-				
+			}			
 		}
 		
+		return null;
+	}
+	
+	
+	public Avion buscarAvion(String cod) {
+		
+		for (int i = 0; i < avion.length; i++) {
+			if(cod.equals(avion[i].getMatricula())) {
+				return avion[i];
+			}
+		}
 		return null;
 	}
 	

@@ -18,7 +18,7 @@ import Aeropuerto.Aeropuerto;
 public class InterfazPedidoVuelo extends JFrame{
 
 	public InterfazPedidoVuelo(Aeropuerto a) {
-		this.setSize(500, 270);
+		this.setSize(500, 300);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
@@ -90,7 +90,23 @@ public class InterfazPedidoVuelo extends JFrame{
 			}
 			
 		});
+		
+		JButton admin=new JButton();
+		admin.setText("Aeropuerto");
+		admin.setBounds(110, 230, 250, 30);
+		admin.setHorizontalAlignment(SwingConstants.CENTER);
+		admin.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(aero);
+		aero.addActionListener(new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				InterfazAddVuelo i1=new InterfazAddVuelo(air);
+				i1.setVisible(true);
+				setVisible(false);
+			}
+			
+		});
 
 	}
 	
