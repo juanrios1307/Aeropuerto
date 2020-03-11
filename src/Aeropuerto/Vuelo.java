@@ -3,6 +3,7 @@ package Aeropuerto;
 import java.util.Arrays;
 import java.util.Date;
 import Avion.Avion;
+import Persona.Mercancia;
 import Persona.Piloto;
 import tiquetes.Tiquete;
 
@@ -18,6 +19,7 @@ public class Vuelo {
 	private String estado;
 	private boolean planDeVuelo,metar,notam;
 	private Tiquete tiquetes[];
+	private Mercancia mercancia[];
 	private String vuelo;
 	
 	public Vuelo(String vuelo,int codAeroptSalida, int codAeroptLlegada,int estado, Date horaSalida, Date horaLlegada, Avion avion,Piloto piloto, Piloto copiloto) {
@@ -31,6 +33,7 @@ public class Vuelo {
 		this.avion = avion;
 		this.estado = estados[estado];
 		this.tiquetes=new Tiquete[0];
+		this.mercancia=new Mercancia[0];
 	}
 	
 	
@@ -44,6 +47,11 @@ public class Vuelo {
 		tiquetes[tiquetes.length-1]=t;
 	}
 	
+	public void addMercancia(Mercancia m) {
+		mercancia=Arrays.copyOf(mercancia, mercancia.length+1);
+		
+		mercancia[mercancia.length-1]=m;
+	}
 	
 
 	public int getCodAeroptSalida() {

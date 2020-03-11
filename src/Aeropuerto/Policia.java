@@ -14,7 +14,7 @@ public class Policia {
 	String ubicArres="C:\\Users\\jergf\\Downloads\\Proyectos lenguajes made in windows\\EstructurasDeDatos\\Aeropuerto\\archivosTexto\\arrestados.txt";
 	Mercancia merca;
 	String ubicmerca;
-	public void arrestar(String person) {
+	public boolean arrestar(String person) {
 	
 		try { 
 			
@@ -27,17 +27,20 @@ public class Policia {
 				 write.append(per.getNombre()+"\t");
 				 write.append(per.getEdad()+"\n");
 				 write.append("------------------------"+"\n");
-				write.close();}
-			catch(IOException e1) {
+				 write.close();
+				 return true;
+			
+			}catch(IOException e1) {
 				System.out.println(e1.getMessage());}
 			in.close();
 			fileIN.close();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		return false;
 	}
-public void mercanciailegal(String mercanci) {
+	
+public boolean mercanciailegal(String mercanci) {
 		
 		try { 
 			
@@ -46,10 +49,13 @@ public void mercanciailegal(String mercanci) {
 		merca=(Mercancia)in.readObject();
 		try {
 			BufferedWriter write=new BufferedWriter(new FileWriter(ubicmerca,true));
-		 write.append(merca.getLote()+"\n");
-	       write.append("------------------------"+"\n");
-		write.close();}
-		catch(IOException e1) {
+			write.append(merca.getLote()+"\n");
+			write.append("------------------------"+"\n");
+			write.close();
+			return true;
+	       
+	       
+		}catch(IOException e1) {
 			System.out.println(e1.getMessage());}
 		in.close();
 		fileIN.close();
@@ -57,6 +63,7 @@ public void mercanciailegal(String mercanci) {
 		catch (Exception e) {
 			e.printStackTrace();
 			}
+		return false;
 }
 		
 }
