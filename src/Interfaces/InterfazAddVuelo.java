@@ -66,13 +66,13 @@ public class InterfazAddVuelo extends JFrame {
 		JLabel etiqueta2=new JLabel();
 		etiqueta2.setText("Codigo salida: ");
 		etiqueta2.setBounds(50, 80, 160, 30);
-		etiqueta2.setFont(new Font("arial",Font.BOLD,20));
+		etiqueta2.setFont(new Font("arial",Font.BOLD,15));
 		panel.add(etiqueta2);
 		
 		JLabel etiqueta3=new JLabel();
 		etiqueta3.setText("Codigo llegada: ");
 		etiqueta3.setBounds(50, 130, 160, 30);
-		etiqueta3.setFont(new Font("arial",Font.BOLD,20));
+		etiqueta3.setFont(new Font("arial",Font.BOLD,15));
 		panel.add(etiqueta3);
 		
 		JLabel etiqueta4=new JLabel();

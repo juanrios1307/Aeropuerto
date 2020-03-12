@@ -54,7 +54,7 @@ public class InterfazTorreControl extends JFrame{
 		
 		JLabel etiqueta3=new JLabel();
 		etiqueta3.setText("Estado vuelo: "+v.getEstado());
-		etiqueta3.setBounds(50, 110, 300, 30);
+		etiqueta3.setBounds(50, 110, 400, 30);
 		etiqueta3.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta3);
 		
