@@ -70,7 +70,7 @@ public class InterfazMecanico extends JFrame{
 		panel.add(para4);
 		
 		JCheckBoxMenuItem para5=new JCheckBoxMenuItem("Equipo de Emergencia",false);
-		para5.setBounds(50,230, 150, 50);
+		para5.setBounds(50,230, 160, 50);
 		para5.setFont(new Font("arial",Font.ITALIC,15));
 		para5.setHorizontalAlignment(SwingConstants.LEFT);
 		panel.add(para5);
@@ -122,14 +122,14 @@ public class InterfazMecanico extends JFrame{
 				m1.setPesoBalance(para7.isSelected());
 				
 				if(m1.validacion() && m1.pesoAdecuado()&& m1.aceite()) {
-					JOptionPane.showMessageDialog(null, "El avion está en condiciones para salir");
+					JOptionPane.showMessageDialog(null, "El avion esta en condiciones para salir");
 					
 					InterfazMigracion tc=new InterfazMigracion(v,a,true);
 					tc.setVisible(true);
 					setVisible(false);
 					
 				}else {
-					JOptionPane.showMessageDialog(null, "El avion no está en condiciones para salir, por favor adecuelo");
+					JOptionPane.showMessageDialog(null, "El avion no esta en condiciones para salir, por favor adecuelo");
 					para1.setSelected(false);
 					para2.setSelected(false);
 					para3.setSelected(false);

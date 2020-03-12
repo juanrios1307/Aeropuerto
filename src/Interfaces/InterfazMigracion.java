@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import Aeropuerto.Aeropuerto;
+import Aeropuerto.Coronavirus;
 import Aeropuerto.Migracion;
 import Aeropuerto.Policia;
 import Aeropuerto.Vuelo;
@@ -24,7 +25,7 @@ import Avion.Comercial;
 public class InterfazMigracion extends JFrame{
 	
 	public InterfazMigracion(Vuelo v,Aeropuerto a,boolean b) {
-		this.setSize(500, 500);
+		this.setSize(500, 580);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
@@ -34,6 +35,7 @@ public class InterfazMigracion extends JFrame{
 	}
 	
 	public void iniciarComponentes(Vuelo v,Aeropuerto a,boolean b) {
+		Coronavirus c1=new Coronavirus(v);
 		Migracion migra=new Migracion(v);
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
@@ -43,21 +45,27 @@ public class InterfazMigracion extends JFrame{
 		etiqueta.setText("Migracion");
 		etiqueta.setBounds(85, 10, 300, 50);
 		etiqueta.setHorizontalAlignment(SwingConstants.CENTER);
-		etiqueta.setFont(new Font("arial",Font.ITALIC,20));
+		etiqueta.setFont(new Font("arial",Font.ITALIC,35));
 		panel.add(etiqueta);
 		
 		ImageIcon alerta =new ImageIcon("iconalert.png");
 		
 		if(migra.getVuelo().getTiquetes().length>0){
 			
+		JLabel alerta3=new JLabel();
+		alerta3.setBounds(110, 390, 250,80);
+		alerta3.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
+		alerta3.setText("Decomisar mercancias");
+		alerta3.setVisible(false);
+		panel.add(alerta3);
 		
 		JButton menu=new JButton();
 		menu.setText("Continuar");
-		menu.setBounds(110, 350, 250, 30);
+		menu.setBounds(110, 490, 250, 30);
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
 		menu.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(menu);
-		menu.setVisible(true);
+		menu.setVisible(false);
 		menu.addActionListener(new ActionListener() {
 
 			@Override
@@ -82,6 +90,25 @@ public class InterfazMigracion extends JFrame{
 			
 		});
 		
+		
+		JButton corona=new JButton();
+		corona.setText("Revisar Infectados");
+		corona.setBounds(110, 350, 250, 30);
+		corona.setHorizontalAlignment(SwingConstants.CENTER);
+		corona.setFont(new Font("arial",Font.ITALIC,20));
+		panel.add(corona);
+		corona.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				menu.setVisible(true);
+				if(c1.buscarenfermo()) {
+				alerta3.setVisible(true);
+			}else{
+				JOptionPane.showMessageDialog(null, "No se encontraron pasajeros infectados");
+			}}
+		});
+		
 		JLabel alertai=new JLabel();
 		alertai.setBounds(110, 120, 250,80);
 		alertai.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
@@ -91,7 +118,7 @@ public class InterfazMigracion extends JFrame{
 		
 		JButton revisar=new JButton();
 		revisar.setText("Revisar Mercancias Avion");
-		revisar.setBounds(110, 80, 250, 30);
+		revisar.setBounds(100, 80, 275, 30);
 		revisar.setHorizontalAlignment(SwingConstants.CENTER);
 		revisar.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(revisar);
@@ -147,7 +174,7 @@ public class InterfazMigracion extends JFrame{
 			menu.setBounds(110, 210, 250, 30);
 			menu.setHorizontalAlignment(SwingConstants.CENTER);
 			menu.setFont(new Font("arial",Font.ITALIC,20));
-			menu.setVisible(true);
+			menu.setVisible(false);
 			panel.add(menu);
 			menu.addActionListener(new ActionListener() {
 
@@ -180,7 +207,7 @@ public class InterfazMigracion extends JFrame{
 			
 			JButton revisar=new JButton();
 			revisar.setText("Revisar Mercancias Avion");
-			revisar.setBounds(110, 80, 250, 30);
+			revisar.setBounds(100, 80, 275, 30);
 			revisar.setHorizontalAlignment(SwingConstants.CENTER);
 			revisar.setFont(new Font("arial",Font.ITALIC,20));
 			panel.add(revisar);
