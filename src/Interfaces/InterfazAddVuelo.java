@@ -191,6 +191,7 @@ public class InterfazAddVuelo extends JFrame {
 				v.setCopiloto(a.buscarPiloto(licenciaCopiloto.getText()));
 				v.setVuelo(numeroVuelo.getText());
 				
+				
 				Date d=new Date();
 				
 				

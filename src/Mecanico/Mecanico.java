@@ -1,7 +1,11 @@
 package Mecanico;
 	
 	import Persona.Persona;
-	import Aeropuerto.Vuelo;
+import excepcion.ENoFecha;
+
+import javax.swing.JOptionPane;
+
+import Aeropuerto.Vuelo;
 	import Avion.Avion;
 	
 public class Mecanico {
@@ -31,7 +35,13 @@ public class Mecanico {
 	}
 	
 	public double pesoCombustible() {
-		long diferencia = vuelo.getHoraLlegada().getTime() - vuelo.getHoraSalida().getTime();
+		long diferencia=0;
+		try {
+			diferencia = vuelo.getHoraLlegada().getTime() - vuelo.getHoraSalida().getTime();
+		} catch (ENoFecha e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
 		long hours = diferencia / (60 * 60 * 1000) % 24;
 		return avion.getConsumo()*hours;
 	}

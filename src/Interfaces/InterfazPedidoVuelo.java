@@ -16,6 +16,7 @@ import javax.swing.SwingConstants;
 
 import Aeropuerto.Aeropuerto;
 import Aeropuerto.Vuelo;
+import excepcion.ENoFecha;
 
 public class InterfazPedidoVuelo extends JFrame{
 
@@ -71,29 +72,42 @@ public class InterfazPedidoVuelo extends JFrame{
 				Date horaActual=new Date();
 				
 				if(v!=null) {
-					long diferencia = v.getHoraLlegada().getTime() - horaActual.getTime();
-					long hours = diferencia / (60 * 60 * 1000) % 24;
-					if(diferencia<3) {
-						InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
-						i1.setVisible(true);
-						setVisible(false);
-					}else {
-						InterfazAdminAero i1=new InterfazAdminAero(air,v);
-						i1.setVisible(true);
-						setVisible(false);
+					long diferencia=0;
+					try {
+						diferencia = v.getHoraLlegada().getTime() - horaActual.getTime();
+						long hours = diferencia / (60 * 60 * 1000) % 24;
+						if(diferencia<3) {
+							InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
+							i1.setVisible(true);
+							setVisible(false);
+						}else {
+							InterfazAdminAero i1=new InterfazAdminAero(air,v);
+							i1.setVisible(true);
+							setVisible(false);
+						}
+					} catch (ENoFecha e1) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, e1.getMessage());
 					}
+					
 				}else if(v1!=null){
-					long diferencia = v1.getHoraLlegada().getTime() - horaActual.getTime();
-					long hours = diferencia / (60 * 60 * 1000) % 24;
-					if(diferencia<3) {
-						InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
-						i1.setVisible(true);
-						setVisible(false);
-					}else {
-						InterfazAdminAero i1=new InterfazAdminAero(air,v1);
-						i1.setVisible(true);
-						setVisible(false);
+					long diferencia=0;
+					try {
+						diferencia = v1.getHoraLlegada().getTime() - horaActual.getTime();
+						long hours = diferencia / (60 * 60 * 1000) % 24;
+						if(diferencia<3) {
+							InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
+							i1.setVisible(true);
+							setVisible(false);
+						}else {
+							InterfazAdminAero i1=new InterfazAdminAero(air,v1);
+							i1.setVisible(true);
+							setVisible(false);
+						}
+					} catch (ENoFecha e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage());
 					}
+					
 						
 				}else {
 					JOptionPane.showMessageDialog(null, "Vuelo no enontrado");

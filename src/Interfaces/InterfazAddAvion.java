@@ -188,7 +188,7 @@ public class InterfazAddAvion extends JFrame {
 				a.addAvion(avion);
 				
 				if(v.getPiloto()!=null) {
-					
+					v.setAvion(avion);
 					a.addVuelo(v,b);
 					JOptionPane.showMessageDialog(null, "Vuelo y avion creados correctamente");
 					InterfazAeropuerto i1=new InterfazAeropuerto(a);

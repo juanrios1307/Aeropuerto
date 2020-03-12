@@ -5,6 +5,7 @@ import java.util.Arrays;
 import Avion.Avion;
 import 	Mecanico.Mecanico;
 import Persona.Piloto;
+import excepcion.ENoFecha;
 import tiquetes.Tiquete;
 
 public class Aeropuerto {
@@ -27,15 +28,36 @@ public class Aeropuerto {
 	Piloto[] piloto;
 	int codigoEstadia;
 	
+	
+	
+	
+	public Avion[] getAvion() {
+		return avion;
+	}
+
+	public void setAvion(Avion[] avion) {
+		this.avion = avion;
+	}
+
+	public Piloto[] getPiloto() {
+		return piloto;
+	}
+
+	public void setPiloto(Piloto[] piloto) {
+		this.piloto = piloto;
+	}
+
 	public void addVuelo(Vuelo v,boolean b) {
 		if(b) {
 			vueloSalida=Arrays.copyOf(vueloSalida, vueloSalida.length+1);
-			
 			vueloSalida[vueloSalida.length-1]=v;
-		}else {
-			vueloLlegada=Arrays.copyOf(vueloLlegada, vueloLlegada.length+1);
 			
+			
+		}else {
+			vueloLlegada=Arrays.copyOf(vueloLlegada, vueloLlegada.length+1);	
 			vueloLlegada[vueloLlegada.length-1]=v;
+			
+			
 		}
 		
 	}
@@ -44,6 +66,8 @@ public class Aeropuerto {
 			try {
 				avion=Arrays.copyOf(avion, avion.length+1);
 				avion[avion.length-1]=a;
+				
+				
 			} catch (Exception e) {
 				System.err.println("error"+e.getMessage());
 				e.printStackTrace();
@@ -54,6 +78,7 @@ public class Aeropuerto {
 	public void addPiloto(Piloto p) {	
 		piloto=Arrays.copyOf(piloto, piloto.length+1);
 		piloto[piloto.length-1]=p;
+		
 	}
 
 	public Piloto buscarPiloto(String cod) {
@@ -101,10 +126,16 @@ public class Aeropuerto {
 		return null;
 	}
 	
-	public double impuestosAeropuertuarios() {
-		long diferencia = vueloLlegada[getCodigoEstadia()].getHoraLlegada().getTime() - vueloSalida[getCodigoEstadia()].getHoraSalida().getTime();
-		long hours = diferencia / (60 * 60 * 1000) % 24;
-		return hours*2000000;
+	public double impuestosAeropuertuarios() throws ENoFecha {
+		long diferencia=0;
+		try {
+			diferencia = vueloLlegada[getCodigoEstadia()].getHoraLlegada().getTime() - vueloSalida[getCodigoEstadia()].getHoraSalida().getTime();
+			long hours = diferencia / (60 * 60 * 1000) % 24;
+			return hours*2000000;
+		} catch (ENoFecha e) {
+			throw e;
+		}
+		
 	}
 	
 	public double cobroGasolina() {

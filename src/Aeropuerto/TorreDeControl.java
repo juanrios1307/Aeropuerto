@@ -14,6 +14,12 @@ public class TorreDeControl {
 	
 	
 	
+	
+	public TorreDeControl(Vuelo vuelo) {
+		super();
+		this.vuelo = vuelo;
+	}
+
 	public boolean isAvionAproximando() {
 		return avionAproximando;
 	}
@@ -53,8 +59,8 @@ public class TorreDeControl {
 	public String estadoVuelo() {
 		final String estados[]={"En pista","Proximo a aterrizar","En sala","Proximo a despegar","Retrasado","Cancelado"};
 		if(vuelo!=null) {
-			if(vuelo.isPlanDeVuelo()&&vuelo.isMetar()&&mecanico.validacion()) {
-				if(notam) {
+			if(isPlanVuelo()&&isMetar()) {
+				if(isNotam()) {
 					return estados[0];
 				}
 				return estados[3];

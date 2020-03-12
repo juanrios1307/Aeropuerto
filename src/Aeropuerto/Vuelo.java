@@ -5,6 +5,7 @@ import java.util.Date;
 import Avion.Avion;
 import Persona.Mercancia;
 import Persona.Piloto;
+import excepcion.ENoFecha;
 import tiquetes.Tiquete;
 
 public class Vuelo {
@@ -77,15 +78,16 @@ public class Vuelo {
 		this.codAeroptLlegada = codAeroptLlegada;
 	}
 
-	public Date getHoraSalida() {
-		return horaSalida;
+	public Date getHoraSalida() throws ENoFecha{
+			return horaSalida;
+		
 	}
 
 	public void setHoraSalida(Date horaSalida) {
 		this.horaSalida = horaSalida;
 	}
 
-	public Date getHoraLlegada() {
+	public Date getHoraLlegada() throws ENoFecha {
 		return horaLlegada;
 	}
 
