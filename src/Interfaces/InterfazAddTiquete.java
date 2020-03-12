@@ -9,20 +9,20 @@ import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.*;
 
 import Aeropuerto.Aeropuerto;
 import Aeropuerto.Vuelo;
+import Persona.Persona;
+import tiquetes.Tiquete;
 
-
-public class InterfazAddVuelo extends JFrame {
+public class InterfazAddTiquete extends JFrame {
+public JPanel panel;
 	
-	public JPanel panel;
-	
-	public InterfazAddVuelo(Aeropuerto a) {
+	public InterfazAddTiquete (Aeropuerto a,Vuelo v) {
 		this.setSize(500, 270);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
@@ -30,19 +30,18 @@ public class InterfazAddVuelo extends JFrame {
 		this.getContentPane().setBackground(Color.gray);
 		
 		
-		iniciarComponentes(a);
+		iniciarComponentes(a,v);
 	}
 
 	
-	public void iniciarComponentes(Aeropuerto a) {
+	public void iniciarComponentes(Aeropuerto a,Vuelo v) {
 		
 		colocarPaneles(a);
 		colocarEtiquetas(a);
-		addTxtAndButton(a);
+		addTxtAndButton(a,v);
 		
 	}
-	
-	Vuelo v=new Vuelo();
+	Tiquete t=new Tiquete();
 	
 	private void colocarPaneles(Aeropuerto a) {
 		panel=new JPanel();
@@ -54,96 +53,99 @@ public class InterfazAddVuelo extends JFrame {
 	private void colocarEtiquetas(Aeropuerto a) {
 		
 		JLabel etiqueta=new JLabel();
-		etiqueta.setText("Agregar vuelo");
+		etiqueta.setText("Agregar tiquete");
 		etiqueta.setBounds(150, 5, 200, 60);
 		etiqueta.setHorizontalAlignment(SwingConstants.CENTER);
 		etiqueta.setFont(new Font("arial",Font.ITALIC,35));
 		panel.add(etiqueta);
 		
+		
+		
+		
 		JLabel etiqueta2=new JLabel();
-		etiqueta2.setText("Codigo salida: ");
+		etiqueta2.setText("Fecha compra: ");
 		etiqueta2.setBounds(50, 80, 300, 30);
 		etiqueta2.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta2);
 		
 		JLabel etiqueta3=new JLabel();
-		etiqueta3.setText("Codigo llegada: ");
+		etiqueta3.setText("Numero silla: ");
 		etiqueta3.setBounds(50, 130, 300, 30);
 		etiqueta3.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta3);
 		
 		JLabel etiqueta4=new JLabel();
-		etiqueta4.setText("Fecha salida: ");
+		etiqueta4.setText("Fila asiento: ");
 		etiqueta4.setBounds(50, 180, 300, 30);
 		etiqueta4.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta4);
 		
 		JLabel etiqueta5=new JLabel();
-		etiqueta5.setText("Fecha llegada: ");
+		etiqueta5.setText("Grupo abordaje: ");
 		etiqueta5.setBounds(50, 80, 300, 30);
 		etiqueta5.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta5);
 		
 		JLabel etiqueta6=new JLabel();
-		etiqueta6.setText("Matricula avion: ");
+		etiqueta6.setText("Codigo reserva: ");
 		etiqueta6.setBounds(50, 130, 300, 30);
 		etiqueta6.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta6);
 		
 		JLabel etiqueta7=new JLabel();
-		etiqueta7.setText("Licencia piloto: ");
+		etiqueta7.setText("Hora en sala: ");
 		etiqueta7.setBounds(50, 180, 300, 30);
 		etiqueta7.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta7);
 		
 		JLabel etiqueta8=new JLabel();
-		etiqueta8.setText("Licencia copiloto: ");
+		etiqueta8.setText("Clase: ");
 		etiqueta8.setBounds(50, 130, 300, 30);
 		etiqueta8.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta8);
 		
 		JLabel etiqueta9=new JLabel();
-		etiqueta9.setText("Numero de vuelo: ");
+		etiqueta9.setText("Peso permitido: ");
 		etiqueta9.setBounds(50, 180, 300, 30);
 		etiqueta9.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta9);
 		
 	}
 	
-	private void addTxtAndButton(Aeropuerto a) {
+	private void addTxtAndButton(Aeropuerto a,Vuelo v) {
 		
-		JTextField codSalida=new JTextField();
-		codSalida.setBounds(270, 130, 170, 30);
-		panel.add(codSalida);
+		JTextField fechaCompra=new JTextField();
+		fechaCompra.setBounds(270, 130, 170, 30);
+		panel.add(fechaCompra);
 		
-		JTextField codLlegada=new JTextField();
-		codLlegada.setBounds(270, 180, 170, 30);
-		panel.add(codLlegada);
+		JTextField numSilla=new JTextField();
+		numSilla.setBounds(270, 180, 170, 30);
+		panel.add(numSilla);
 		
 		
-	/*	JTextField horaSalida=new JTextField();
-		txtCedula.setBounds(270, 130, 170, 30);
-		panel.add(txtCedula);
+		JTextField filaAsiento=new JTextField();
+		filaAsiento.setBounds(270, 130, 170, 30);
+		panel.add(filaAsiento);
 		
-		JTextField horaLlegada=new JTextField();
-		txtCodigoLibro.setBounds(270, 180, 170, 30);
-		panel.add(txtCodigoLibro);*/
+		JTextField grupoAbordaje=new JTextField();
+		grupoAbordaje.setBounds(270, 180, 170, 30);
+		panel.add(grupoAbordaje);
 		
-		JTextField matriculaAvion=new JTextField();
-		matriculaAvion.setBounds(270, 130, 170, 30);
-		panel.add(matriculaAvion);
+		JTextField codigoReserva=new JTextField();
+		codigoReserva.setBounds(270, 130, 170, 30);
+		panel.add(codigoReserva);
 		
-		JTextField licenciaPiloto=new JTextField();
-		licenciaPiloto.setBounds(270, 180, 170, 30);
-		panel.add(licenciaPiloto);
+		JTextField horaSala=new JTextField();
+		horaSala.setBounds(270, 180, 170, 30);
+		panel.add(horaSala);
 		
-		JTextField licenciaCopiloto=new JTextField();
-		licenciaCopiloto.setBounds(270, 130, 170, 30);
-		panel.add(licenciaCopiloto);
+		JTextField clase=new JTextField();
+		clase.setBounds(270, 130, 170, 30);
+		panel.add(clase);
 		
-		JTextField numeroVuelo=new JTextField();
-		numeroVuelo.setBounds(270, 180, 170, 30);
-		panel.add(numeroVuelo);
+		JTextField equipajePermitido=new JTextField();
+		equipajePermitido.setBounds(270, 180, 170, 30);
+		panel.add(equipajePermitido);
 		
 		
 		
@@ -172,47 +174,19 @@ public class InterfazAddVuelo extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				t.setNumSilla(Integer.parseInt(numSilla.getText()));
 				
-				v.setCodAeroptSalida(Integer.parseInt(codSalida.getText()));
-				v.setCodAeroptLlegada(Integer.parseInt(codLlegada.getText()));
-				v.setAvion(a.buscarAvion(matriculaAvion.getText()));
 				
-				v.setPiloto(a.buscarPiloto(licenciaPiloto.getText()));
-				v.setCopiloto(a.buscarPiloto(licenciaPiloto.getText()));
-				v.setVuelo(numeroVuelo.getText());
-				
-				Date d=new Date();
+				JOptionPane.showMessageDialog(null, "Tiquete creado correctamente");
 				
 				
 				
-				Boolean bool;
-				if(codSalida.getText().equals("4256")) {
-					bool=true;
-				}else {
-					bool=false;
-				}
-				
-				
-				if(v.getAvion()!=null && v.getPiloto()!=null && v.getCopiloto()!=null) {
-					a.addVuelo(v, bool);
-					JOptionPane.showMessageDialog(null, "Vuelo añadido correctamente");
-				}else if(v.getAvion()==null){
-					JOptionPane.showMessageDialog(null, "Avion no creado, por favor crearlo");
-					InterfazAddAvion i1=new InterfazAddAvion(a,v,bool);
-					i1.setVisible(true);
-					setVisible(false);
-				}else if(v.getPiloto()==null || v.getCopiloto()==null) {
-					JOptionPane.showMessageDialog(null, "Piloto no creado, por favor creelo para utilizar el aeropuerto");
-					InterfazAddPiloto i1=new InterfazAddPiloto(a,v,bool);
-					i1.setVisible(true);
-					setVisible(false);
-				}
+			
 					
 			}
 		});
 		panel.add(btnGuardar);
 	}
-	
 	
 	
 }

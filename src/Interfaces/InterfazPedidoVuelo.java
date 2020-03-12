@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import Aeropuerto.Aeropuerto;
+import Aeropuerto.Vuelo;
 
 public class InterfazPedidoVuelo extends JFrame{
 
@@ -58,11 +60,39 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				
+				Vuelo v=air.buscarVueloLlegada(vuelo.getText());
+				Vuelo v1=air.buscarVueloSalida(vuelo.getText());
+				
+				
+				
+				v.getHoraLlegada().getTime();
+				
+				Date horaActual=new Date();
+				
+				System.out.println(horaActual.getTime()+
+						"\n"+v.getHoraLlegada().getTime() +
+						"\n"+ horaActual.getTime() +
+						"\n "+v.getHoraLlegada().getTime()+3);
+
+				
+				
 				if(air.buscarVueloLlegada(vuelo.getText())!=null) {
+					if(horaActual.getTime() <= v.getHoraLlegada().getTime() && horaActual.getTime() >= v.getHoraLlegada().getTime()+3) {
+						InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
+						i1.setVisible(true);
+						setVisible(false);
+					}else {
+						InterfazAdminAero i1=new InterfazAdminAero(air);
+						i1.setVisible(true);
+						setVisible(false);
+					}
 					
-					InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
-					i1.setVisible(true);
-					setVisible(false);
+					
+					
 				}else if(air.buscarVueloSalida(vuelo.getText())!=null){
 					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
 					i1.setVisible(true);
@@ -101,7 +131,7 @@ public class InterfazPedidoVuelo extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazAdminAero i1=new InterfazAdminAero(air);
+				InterfazAddVuelo i1=new InterfazAddVuelo(air);
 				i1.setVisible(true);
 				setVisible(false);
 			}
