@@ -175,12 +175,31 @@ public JPanel panel;
 			public void actionPerformed(ActionEvent e) {
 				
 				t.setNumSilla(Integer.parseInt(numSilla.getText()));
+				t.setFilaAsiento(filaAsiento.getText().charAt(0));
+				t.setGrupoAbordaje(Integer.parseInt(grupoAbordaje.getText()));
+				t.setCodigoReserva(codigoReserva.getText());
 				
+				t.setClase(clase.getText());
+				t.setPesoEquipajePermitido(Double.parseDouble(equipajePermitido.getText()));
+				
+				v.addTiquete(t);
 				
 				JOptionPane.showMessageDialog(null, "Tiquete creado correctamente");
 				
+				int k=JOptionPane.showConfirmDialog(null, "¿Desea agregar mas tiquetes ?");
 				
-				
+				if(k==0) {
+					numSilla.setText("");
+					filaAsiento.setText("");
+					grupoAbordaje.setText("");
+					codigoReserva.setText("");
+					clase.setText("");
+					equipajePermitido.setText("");
+				}else {
+					InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
+					i1.setVisible(true);
+					setVisible(false);
+				}
 			
 					
 			}

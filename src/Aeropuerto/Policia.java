@@ -13,7 +13,7 @@ public class Policia {
 	Persona per;
 	String ubicArres="C:\\Users\\jergf\\Downloads\\Proyectos lenguajes made in windows\\EstructurasDeDatos\\Aeropuerto\\archivosTexto\\arrestados.txt";
 	Mercancia merca;
-	String ubicmerca;
+	String ubicmerca="C:\\\\Users\\\\jergf\\\\Downloads\\\\Proyectos lenguajes made in windows\\\\EstructurasDeDatos\\\\Aeropuerto\\\\archivosTexto\\\\mercanciaDecomisada.txt";
 	public boolean arrestar(String person) {
 	
 		try { 

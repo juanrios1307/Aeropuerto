@@ -78,7 +78,7 @@ public class InterfazPedidoVuelo extends JFrame{
 						i1.setVisible(true);
 						setVisible(false);
 					}else {
-						InterfazAdminAero i1=new InterfazAdminAero(air);
+						InterfazAdminAero i1=new InterfazAdminAero(air,v);
 						i1.setVisible(true);
 						setVisible(false);
 					}
@@ -88,7 +88,7 @@ public class InterfazPedidoVuelo extends JFrame{
 						i1.setVisible(true);
 						setVisible(false);
 					}else {
-						InterfazAdminAero i1=new InterfazAdminAero(air);
+						InterfazAdminAero i1=new InterfazAdminAero(air,v1);
 						i1.setVisible(true);
 						setVisible(false);
 					}
@@ -101,7 +101,7 @@ public class InterfazPedidoVuelo extends JFrame{
 		});
 		
 		JButton aero=new JButton();
-		aero.setText("Hola");
+		aero.setText("Aeropuerto");
 		aero.setBounds(110, 170, 250, 30);
 		aero.setHorizontalAlignment(SwingConstants.CENTER);
 		aero.setFont(new Font("arial",Font.ITALIC,20));

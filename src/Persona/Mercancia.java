@@ -26,5 +26,16 @@ public class Mercancia implements Serializable {
 		this.peso = peso;
 	}
 	
+	public Mercancia() {
+		
+	}
+	public void setLote(String lote) {
+		this.lote = lote;
+	}
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	
 
 }

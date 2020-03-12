@@ -14,20 +14,21 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import Aeropuerto.Aeropuerto;
+import Aeropuerto.Vuelo;
 
 public class InterfazAdminAero extends JFrame{
 	
-	public InterfazAdminAero(Aeropuerto a) {
+	public InterfazAdminAero(Aeropuerto a,Vuelo v) {
 		this.setSize(400, 350);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes(a);
+		iniciarComponentes(a,v);
 	}
 	
-	public void iniciarComponentes(Aeropuerto air) {
+	public void iniciarComponentes(Aeropuerto a,Vuelo v) {
 		
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
@@ -51,7 +52,9 @@ public class InterfazAdminAero extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+				InterfazAddTiquete i1=new InterfazAddTiquete(a, v);
+				i1.setVisible(true);
+				setVisible(false);
 			}});
 		
 		JButton aero=new JButton();
@@ -64,7 +67,9 @@ public class InterfazAdminAero extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+				InterfazAddMercancia i1=new InterfazAddMercancia(a, v);
+				i1.setVisible(true);
+				setVisible(false);
 			}
 			
 		});
@@ -79,7 +84,7 @@ public class InterfazAdminAero extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			InterfazPedidoVuelo i1=new InterfazPedidoVuelo(air);
+			InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
 			i1.setVisible(true);
 			setVisible(false);
 			}
