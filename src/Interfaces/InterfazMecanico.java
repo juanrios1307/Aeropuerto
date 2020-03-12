@@ -70,7 +70,7 @@ public class InterfazMecanico extends JFrame{
 		panel.add(para4);
 		
 		JCheckBoxMenuItem para5=new JCheckBoxMenuItem("Equipo de Emergencia",false);
-		para5.setBounds(50,230, 160, 50);
+		para5.setBounds(50,230, 170, 50);
 		para5.setFont(new Font("arial",Font.ITALIC,15));
 		para5.setHorizontalAlignment(SwingConstants.LEFT);
 		panel.add(para5);

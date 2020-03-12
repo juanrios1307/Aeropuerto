@@ -84,7 +84,7 @@ public class InterfazTorreControl extends JFrame{
 		
 		JLabel etiqueta7=new JLabel();
 		etiqueta7.setText("Hora "+(b?"despegue: "+v.getHoraSalida():"aterrizaje: "+v.getHoraLlegada()));
-		etiqueta7.setBounds(50, 260, 450, 30);
+		etiqueta7.setBounds(50, 260, 400, 30);
 		etiqueta7.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta7);
 		
@@ -137,7 +137,7 @@ public class InterfazTorreControl extends JFrame{
 				if(b) {
 					if(tc.isPlanVuelo()&&tc.isNotam()&&tc.isMetar()) {
 						JOptionPane.showMessageDialog(null, tc.estadoVuelo());
-						JOptionPane.showMessageDialog(null, "El avion despegó");
+						JOptionPane.showMessageDialog(null, "El avion despego");
 						int bool=JOptionPane.showConfirmDialog(null, "Desea continuar operaciones?");
 						if(bool==0) {
 							InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
@@ -152,7 +152,7 @@ public class InterfazTorreControl extends JFrame{
 					}
 					
 				}else {
-					JOptionPane.showMessageDialog(null, "El avion aterrizó");
+					JOptionPane.showMessageDialog(null, "El avion aterrizo");
 					tc.setAvionAproximando(true);
 					
 					InterfazMigracion i1=new InterfazMigracion(v,a,false);

@@ -55,7 +55,7 @@ public class InterfazMigracion extends JFrame{
 		JLabel alerta3=new JLabel();
 		alerta3.setBounds(110, 390, 250,80);
 		alerta3.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
-		alerta3.setText("Decomisar mercancias");
+		alerta3.setText("Poner en cuarentena");
 		alerta3.setVisible(false);
 		panel.add(alerta3);
 		
@@ -153,7 +153,6 @@ public class InterfazMigracion extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				menu.setVisible(true);
 				if(migra.revisarPasajerosVuelo()) {
 					
 					alerta2.setVisible(true);
