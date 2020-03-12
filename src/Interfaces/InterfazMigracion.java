@@ -73,7 +73,7 @@ public class InterfazMigracion extends JFrame{
 		JLabel alertai=new JLabel();
 		alertai.setBounds(110, 120, 250,80);
 		alertai.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
-		alertai.setText("Arrestar tripulacion");
+		alertai.setText("Arrestar");
 		alertai.setVisible(false);
 		panel.add(alertai);
 		

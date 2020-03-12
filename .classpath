@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="uml"/>
 	<classpathentry kind="src" path="archivosTexto"/>
 	<classpathentry kind="src" path="Imagenes"/>
-	<classpathentry kind="lib" path="C:/Users/juans/Downloads/jcalendar-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="/media/juan-rios/Windows/Users/jergf/Downloads/Proyectos lenguajes made in windows/EstructurasDeDatos/Aeropuerto/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
