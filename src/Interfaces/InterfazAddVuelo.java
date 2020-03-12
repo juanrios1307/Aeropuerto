@@ -90,7 +90,7 @@ public class InterfazAddVuelo extends JFrame {
 		JLabel etiqueta6=new JLabel();
 		etiqueta6.setText("Matricula avion: ");
 		etiqueta6.setBounds(50, 180, 300, 30);
-		etiqueta6.setFont(new Font("arial",Font.BOLD,20));
+		etiqueta6.setFont(new Font("arial",Font.BOLD,18));
 		panel.add(etiqueta6);
 		
 		JLabel etiqueta7=new JLabel();
@@ -102,13 +102,13 @@ public class InterfazAddVuelo extends JFrame {
 		JLabel etiqueta8=new JLabel();
 		etiqueta8.setText("Licencia copiloto: ");
 		etiqueta8.setBounds(420, 230, 300, 30);
-		etiqueta8.setFont(new Font("arial",Font.BOLD,20));
+		etiqueta8.setFont(new Font("arial",Font.BOLD,18));
 		panel.add(etiqueta8);
 		
 		JLabel etiqueta9=new JLabel();
 		etiqueta9.setText("Numero de vuelo: ");
 		etiqueta9.setBounds(50, 230, 300, 30);
-		etiqueta9.setFont(new Font("arial",Font.BOLD,20));
+		etiqueta9.setFont(new Font("arial",Font.BOLD,18));
 		panel.add(etiqueta9);
 		
 	}

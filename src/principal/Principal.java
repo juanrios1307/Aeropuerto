@@ -56,7 +56,7 @@ public class Principal {
 		Mercancia[] merca=new Mercancia[10];
 		
 		for (int i = 0; i < t.length; i++) {
-			merca[i]=new Mercancia("AS456", true, (int)(Math.random()*50));
+			merca[i]=new Mercancia("heroina", true, (int)(Math.random()*50));
 			t[i]=new Tiquete(horaLlegada, 6+i, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[i], p[i]);
 		}
 		
