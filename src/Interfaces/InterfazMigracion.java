@@ -57,7 +57,7 @@ public class InterfazMigracion extends JFrame{
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
 		menu.setFont(new Font("arial",Font.ITALIC,20));
 		panel.add(menu);
-		menu.setVisible(false);
+		menu.setVisible(true);
 		menu.addActionListener(new ActionListener() {
 
 			@Override
@@ -133,7 +133,7 @@ public class InterfazMigracion extends JFrame{
 			menu.setBounds(110, 210, 250, 30);
 			menu.setHorizontalAlignment(SwingConstants.CENTER);
 			menu.setFont(new Font("arial",Font.ITALIC,20));
-			menu.setVisible(false);
+			menu.setVisible(true);
 			panel.add(menu);
 			menu.addActionListener(new ActionListener() {
 

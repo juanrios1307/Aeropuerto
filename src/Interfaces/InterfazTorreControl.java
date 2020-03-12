@@ -66,50 +66,45 @@ public class InterfazTorreControl extends JFrame{
 		
 		JLabel etiqueta5=new JLabel();
 		etiqueta5.setText("Documento piloto: "+v.getPiloto().getDocumento());
-		etiqueta5.setBounds(50, 170, 300, 30);
+		etiqueta5.setBounds(50, 170, 450, 30);
 		etiqueta5.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta5);
 		
 		JLabel etiqueta8=new JLabel();
 		etiqueta8.setText("Personal a bordo: "+v.getTiquetes().length+2);
-		etiqueta8.setBounds(50, 200, 300, 30);
+		etiqueta8.setBounds(50, 200, 450, 30);
 		etiqueta8.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta8);
 		
 		JLabel etiqueta6=new JLabel();
 		etiqueta6.setText("Codigo "+(b?"destino: "+v.getCodAeroptLlegada():"origen: "+v.getCodAeroptSalida()));
-		etiqueta6.setBounds(50, 230, 300, 30);
+		etiqueta6.setBounds(50, 230, 450, 30);
 		etiqueta6.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta6);
 		
 		JLabel etiqueta7=new JLabel();
 		etiqueta7.setText("Hora "+(b?"despegue: "+v.getHoraSalida():"aterrizaje: "+v.getHoraLlegada()));
-		etiqueta7.setBounds(50, 260, 300, 30);
+		etiqueta7.setBounds(50, 260, 450, 30);
 		etiqueta7.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta7);
 		
-		JLabel lblprestamo=new JLabel();
-		lblprestamo.setBounds(50, 300, 350, 20);
-		lblprestamo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblprestamo.setFont(new Font("arial",Font.ITALIC,20));
-		panel.add(lblprestamo);
 		
 		JCheckBoxMenuItem para1=new JCheckBoxMenuItem("Plan de Vuelo",false);
-		para1.setBounds(50,50, 120, 50);
+		para1.setBounds(50,50, 130, 30);
 		para1.setFont(new Font("arial",Font.ITALIC,15));
 		para1.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		
 		JCheckBoxMenuItem para2=new JCheckBoxMenuItem("Notam",false);
-		para2.setBounds(50,50, 120, 50);
+		para2.setBounds(190,50, 100, 30);
 		para2.setFont(new Font("arial",Font.ITALIC,15));
 		para2.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		
 		JCheckBoxMenuItem para3=new JCheckBoxMenuItem("Metar",false);
-		para2.setBounds(50,50, 120, 50);
-		para2.setFont(new Font("arial",Font.ITALIC,15));
-		para2.setHorizontalAlignment(SwingConstants.LEFT);
+		para3.setBounds(300,50, 120, 30);
+		para3.setFont(new Font("arial",Font.ITALIC,15));
+		para3.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		
 		if(b) {
@@ -134,20 +129,28 @@ public class InterfazTorreControl extends JFrame{
 					tc.setPlanVuelo(para1.isSelected());
 					tc.setNotam(para2.isSelected());
 					tc.setMetar(para3.isSelected());
+					
 				}else {
 					
 				}
 				
 				if(b) {
-					JOptionPane.showMessageDialog(null, "El avion despegó");
-					int bool=JOptionPane.showConfirmDialog(null, "Desea continuar operaciones?");
-					if(bool==0) {
-						InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
-						i1.setVisible(true);
-						setVisible(false);
+					if(tc.isPlanVuelo()&&tc.isNotam()&&tc.isMetar()) {
+						JOptionPane.showMessageDialog(null, tc.estadoVuelo());
+						JOptionPane.showMessageDialog(null, "El avion despegó");
+						int bool=JOptionPane.showConfirmDialog(null, "Desea continuar operaciones?");
+						if(bool==0) {
+							InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
+							i1.setVisible(true);
+							setVisible(false);
+						}else {
+							setVisible(false);
+						}
 					}else {
-						setVisible(false);
+						JOptionPane.showMessageDialog(null, tc.estadoVuelo());
+						JOptionPane.showMessageDialog(null, "El avion aun no tiene las condiciones para despegar");
 					}
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "El avion aterrizó");
 					tc.setAvionAproximando(true);
