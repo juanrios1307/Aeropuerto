@@ -178,8 +178,9 @@ public class InterfazAddVuelo extends JFrame {
 				v.setCodAeroptSalida(Integer.parseInt(codSalida.getText()));
 				v.setCodAeroptLlegada(Integer.parseInt(codLlegada.getText()));
 				v.setAvion(a.buscarAvion(matriculaAvion.getText()));
-				
-				//v.setPiloto(a.buscarPiloto(licenciaPiloto.getText()));
+				v.setHoraSalida(horaSalida.getDate());
+				v.setHoraLlegada(horaLlegada.getDate());
+				v.setPiloto(a.buscarPiloto(licenciaPiloto.getText()));
 				v.setCopiloto(a.buscarPiloto(licenciaCopiloto.getText()));
 				v.setVuelo(numeroVuelo.getText());
 				

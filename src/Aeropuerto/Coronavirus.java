@@ -5,9 +5,16 @@ import tiquetes.Tiquete;
 
 public class Coronavirus {
 	String direccion;
-	Vuelo Vuelo;
-	Tiquete[] personas=Vuelo.getTiquetes();
+	Vuelo vuelo;
+	Tiquete[] personas=vuelo.getTiquetes();
 	
+	
+	
+	public Coronavirus(Vuelo vuelo) {
+		super();
+		this.vuelo = vuelo;
+	}
+
 	public boolean buscarenfermo() {
 		for (int i=0;i<personas.length;i++) {
 			if( personas[i].getPersona().isEnfermo()) {

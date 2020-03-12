@@ -112,6 +112,12 @@ public JPanel panel;
 		etiqueta9.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta9);
 		
+		JLabel etiqueta10=new JLabel();
+		etiqueta10.setText("Documento: ");
+		etiqueta10.setBounds(50, 270, 300, 30);
+		etiqueta10.setFont(new Font("arial",Font.BOLD,20));
+		panel.add(etiqueta10);
+		
 	}
 	
 	private void addTxtAndButton(Aeropuerto a,Vuelo v) {
@@ -149,6 +155,10 @@ public JPanel panel;
 		equipajePermitido.setBounds(230, 230, 160, 30);
 		panel.add(equipajePermitido);
 		
+
+		JTextField documento=new JTextField();
+		documento.setBounds(230, 270, 160, 30);
+		panel.add(documento);
 		
 		
 		JButton btnMain = new JButton();
@@ -183,12 +193,13 @@ public JPanel panel;
 				
 				t.setClase(clase.getText());
 				t.setPesoEquipajePermitido(Double.parseDouble(equipajePermitido.getText()));
+				t.setDocumento(documento.getText());
 				
 				v.addTiquete(t);
 				
 				JOptionPane.showMessageDialog(null, "Tiquete creado correctamente");
 				
-				int k=JOptionPane.showConfirmDialog(null, "�Desea agregar mas tiquetes ?");
+				int k=JOptionPane.showConfirmDialog(null, "¿Desea agregar mas tiquetes ?");
 				
 				if(k==0) {
 					numSilla.setText("");
@@ -197,6 +208,7 @@ public JPanel panel;
 					codigoReserva.setText("");
 					clase.setText("");
 					equipajePermitido.setText("");
+					documento.setText("");
 				}else {
 					InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
 					i1.setVisible(true);

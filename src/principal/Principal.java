@@ -57,7 +57,7 @@ public class Principal {
 		
 		for (int i = 0; i < t.length; i++) {
 			merca[i]=new Mercancia("heroina", true, (int)(Math.random()*50));
-			t[i]=new Tiquete(horaLlegada, 6+i, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[i], p[i]);
+			t[i]=new Tiquete(horaLlegada, 6+i, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[i], p[i],p[i].getDocumento());
 		}
 		
 		for (int i = 0; i < vueloSalida.length; i++) {
@@ -65,10 +65,10 @@ public class Principal {
 			vueloSalida[i]=new Vuelo("AV"+((int)(Math.random()*8999)+1000),((int)(Math.random()*8999)+1000), 8520+i,(int) (Math.random()*6), horaSalida, horaLlegada, avComercial[i], pil[i], pil[i+1]);
 		}
 		p[5]=new Persona("Juan Se", "AS54641Q", "Colombia", (int)(Math.random()*100)+1,false, maleta);
-		t[5]=new Tiquete(horaLlegada, 6, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[5], p[5]);
+		t[5]=new Tiquete(horaLlegada, 6, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[5], p[5],p[5].getDocumento());
 		
 		for (int i = 0; i < t.length; i++) {
-			t[i]=new Tiquete(horaLlegada, 6, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[i], p[5]);
+			t[i]=new Tiquete(horaLlegada, 6, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[i], p[5],p[5].getDocumento());
 		}
 		
 		for (int i = 0; i < vueloSalida.length; i++) {	

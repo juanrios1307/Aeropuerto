@@ -16,6 +16,7 @@ public class Tiquete {
 	private String clase;
 	private double pesoEquipajePermitido;
 	private Vuelo vuelo;
+	private String documento;
 	private Persona persona;
 	
 	public Date getFechaCompra() {
@@ -28,8 +29,17 @@ public class Tiquete {
 		super();
 	}
 	
-	
-	
+	public String getDocumento() {
+		return documento;
+	}
+
+
+
+	public void setDocumento(String documento) {
+		this.documento = documento;
+	}
+
+
 
 	public void setFechaCompra(Date fechaCompra) {
 		this.fechaCompra = fechaCompra;
@@ -92,7 +102,7 @@ public class Tiquete {
 
 
 	public Tiquete(Date fechaCompra, int numSilla, char filaAsiento, int grupoAbordaje, String codigoReserva,
-			Date horaEnSala, String clase, double pesoEquipajePermitido, Vuelo vuelo, Persona persona) {
+			Date horaEnSala, String clase, double pesoEquipajePermitido, Vuelo vuelo, Persona persona,String documento) {
 		super();
 		this.fechaCompra = fechaCompra;
 		this.numSilla = numSilla;
@@ -104,6 +114,7 @@ public class Tiquete {
 		this.pesoEquipajePermitido = pesoEquipajePermitido;
 		this.vuelo = vuelo;
 		this.persona = persona;
+		this.documento=documento;
 	}
 	
 	
