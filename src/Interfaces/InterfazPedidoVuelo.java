@@ -73,7 +73,9 @@ public class InterfazPedidoVuelo extends JFrame{
 				JOptionPane.showMessageDialog(null, horaActual.getTime());
 				
 				if(v!=null) {
-					if(horaActual.getTime() <= v.getHoraLlegada().getTime() && horaActual.getTime() >= v.getHoraLlegada().getTime()-3) {
+					long diferencia = v.getHoraLlegada().getTime() - horaActual.getTime();
+					long hours = diferencia / (60 * 60 * 1000) % 24;
+					if(diferencia<3) {
 						InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
 						i1.setVisible(true);
 						setVisible(false);
