@@ -39,7 +39,6 @@ public class Migracion {
 						if (documento.equals(vuelo.getTiquetes()[i].getPersona().getDocumento())) {
 							try {
 								String dir = "/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/delincuente.ser";
-								BufferedWriter bw = new BufferedWriter(new FileWriter(dir, false));
 								FileOutputStream fileOut = new FileOutputStream(dir);
 								ObjectOutputStream out = new ObjectOutputStream(fileOut);
 								out.writeObject(vuelo.getTiquetes()[i].getPersona());
@@ -80,7 +79,6 @@ public class Migracion {
 								if (lote.equals(vuelo.getTiquetes()[i].getPersona().getMaletas()[j].getMercancias()[k].getLote())) {
 									try {
 										String dir = "/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercancia.ser";
-										BufferedWriter bw = new BufferedWriter(new FileWriter(dir, false));
 										FileOutputStream fileOut = new FileOutputStream(dir);
 										ObjectOutputStream out = new ObjectOutputStream(fileOut);
 										
@@ -119,7 +117,6 @@ public class Migracion {
 					if (lote.equals(vuelo.getMercancia()[i].getLote())) {
 						try {
 							String dir = "/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercancia.ser";
-							BufferedWriter bw = new BufferedWriter(new FileWriter(dir, false));
 							FileOutputStream fileOut = new FileOutputStream(dir);
 							ObjectOutputStream out = new ObjectOutputStream(fileOut);
 							out.writeObject(vuelo.getMercancia()[i]);
