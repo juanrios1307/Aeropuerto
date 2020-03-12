@@ -153,7 +153,7 @@ public class InterfazAddVuelo extends JFrame {
 		btnMain.setBounds(425, 290, 200,40);
 		btnMain.setText("Cancelar y cerrar");
 		btnMain.setEnabled(true);
-		btnMain.setFont(new Font("arial",3,20));
+		btnMain.setFont(new Font("arial",3,15));
 		btnMain.addActionListener(new ActionListener() {
 			
 			@Override
@@ -179,8 +179,8 @@ public class InterfazAddVuelo extends JFrame {
 				v.setCodAeroptLlegada(Integer.parseInt(codLlegada.getText()));
 				v.setAvion(a.buscarAvion(matriculaAvion.getText()));
 				
-				v.setPiloto(a.buscarPiloto(licenciaPiloto.getText()));
-				v.setCopiloto(a.buscarPiloto(licenciaPiloto.getText()));
+				//v.setPiloto(a.buscarPiloto(licenciaPiloto.getText()));
+				v.setCopiloto(a.buscarPiloto(licenciaCopiloto.getText()));
 				v.setVuelo(numeroVuelo.getText());
 				
 				Date d=new Date();

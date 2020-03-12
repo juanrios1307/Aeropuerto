@@ -14,6 +14,7 @@ public class Aeropuerto {
 		this.vueloLlegada = vueloLlegada;
 		this.vueloSalida = vueloSalida;
 		this.avion=avion;
+		this.piloto=p;
 	}
 
 	public Aeropuerto() {
@@ -50,7 +51,7 @@ public class Aeropuerto {
 	}
 
 	public Piloto buscarPiloto(String cod) {
-	
+		
 		for (int i = 0; i < piloto.length; i++) {
 			if(cod.equals(piloto[i].getLicencia())) {
 				return piloto[i];

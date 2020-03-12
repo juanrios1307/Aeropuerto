@@ -82,10 +82,10 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		Aeropuerto a=datosPrueba();
-		//InterfazAddVuelo i=new InterfazAddVuelo(a);
-		//i.setVisible(true);
 		
-		InterfazPedidoVuelo menu=new InterfazPedidoVuelo(a);
+		
+		//InterfazPedidoVuelo menu=new InterfazPedidoVuelo(a);
+		InterfazAddTiquete menu=new InterfazAddTiquete(a, a.getVueloLlegada()[0]);
 		menu.setVisible(true);
 		}
 	}

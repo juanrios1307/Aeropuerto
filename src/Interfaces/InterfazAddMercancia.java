@@ -53,9 +53,9 @@ public JPanel panel;
 		
 		JLabel etiqueta=new JLabel();
 		etiqueta.setText("Agregar mercancia");
-		etiqueta.setBounds(150, 5, 200, 60);
+		etiqueta.setBounds(100, 5, 300, 60);
 		etiqueta.setHorizontalAlignment(SwingConstants.CENTER);
-		etiqueta.setFont(new Font("arial",Font.ITALIC,35));
+		etiqueta.setFont(new Font("arial",Font.ITALIC,25));
 		panel.add(etiqueta);
 		
 		
@@ -81,11 +81,11 @@ public JPanel panel;
 	private void addTxtAndButton(Aeropuerto a,Vuelo v) {
 		
 		JTextField lote=new JTextField();
-		lote.setBounds(270, 130, 170, 30);
+		lote.setBounds(270, 80, 170, 30);
 		panel.add(lote);
 		
 		JTextField peso=new JTextField();
-		peso.setBounds(270, 180, 170, 30);
+		peso.setBounds(270, 130, 170, 30);
 		panel.add(peso);
 		
 		
@@ -93,10 +93,10 @@ public JPanel panel;
 		
 		
 		JButton btnMain = new JButton();
-		btnMain.setBounds(260, 280, 200,40);
+		btnMain.setBounds(260, 170, 200,40);
 		btnMain.setText("Cancelar y cerrar");
 		btnMain.setEnabled(true);
-		btnMain.setFont(new Font("arial",3,20));
+		btnMain.setFont(new Font("arial",3,15));
 		btnMain.addActionListener(new ActionListener() {
 			
 			@Override
@@ -108,7 +108,7 @@ public JPanel panel;
 		panel.add(btnMain);
 	
 		JButton btnGuardar = new JButton();
-		btnGuardar.setBounds(30, 280, 200,40);
+		btnGuardar.setBounds(30, 170, 200,40);
 		btnGuardar.setText("Confirmar");
 		btnGuardar.setEnabled(true);
 		btnGuardar.setFont(new Font("arial",3,20));
@@ -123,7 +123,7 @@ public JPanel panel;
 				
 				JOptionPane.showMessageDialog(null, "Mercancia creada correctamente");
 				
-				int k=JOptionPane.showConfirmDialog(null, "¿Desea agregar mas mercancias ?");
+				int k=JOptionPane.showConfirmDialog(null, "ï¿½Desea agregar mas mercancias ?");
 				
 				if(k==0) {
 					peso.setText("");
