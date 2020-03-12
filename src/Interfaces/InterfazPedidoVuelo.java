@@ -68,20 +68,12 @@ public class InterfazPedidoVuelo extends JFrame{
 				Vuelo v1=air.buscarVueloSalida(vuelo.getText());
 				
 				
-				
-				v.getHoraLlegada().getTime();
-				
 				Date horaActual=new Date();
-				
-				System.out.println(horaActual.getTime()+
-						"\n"+v.getHoraLlegada().getTime() +
-						"\n"+ horaActual.getTime() +
-						"\n "+v.getHoraLlegada().getTime()+3);
 
+				JOptionPane.showMessageDialog(null, horaActual.getTime());
 				
-				
-				if(air.buscarVueloLlegada(vuelo.getText())!=null) {
-					if(horaActual.getTime() <= v.getHoraLlegada().getTime() && horaActual.getTime() >= v.getHoraLlegada().getTime()+3) {
+				if(v!=null) {
+					if(horaActual.getTime() <= v.getHoraLlegada().getTime() && horaActual.getTime() >= v.getHoraLlegada().getTime()-3) {
 						InterfazTorreControl i1=new InterfazTorreControl(air.buscarVueloLlegada(vuelo.getText()),false,air);
 						i1.setVisible(true);
 						setVisible(false);
@@ -90,13 +82,17 @@ public class InterfazPedidoVuelo extends JFrame{
 						i1.setVisible(true);
 						setVisible(false);
 					}
-					
-					
-					
-				}else if(air.buscarVueloSalida(vuelo.getText())!=null){
-					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
-					i1.setVisible(true);
-					setVisible(false);
+				}else if(v1!=null){
+					if(horaActual.getTime() <= v1.getHoraSalida().getTime() && horaActual.getTime() >= v1.getHoraSalida().getTime()-3){
+						InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
+						i1.setVisible(true);
+						setVisible(false);
+					}else {
+						InterfazAdminAero i1=new InterfazAdminAero(air);
+						i1.setVisible(true);
+						setVisible(false);
+					}
+						
 				}else {
 					JOptionPane.showMessageDialog(null, "Vuelo no enontrado");
 				}
@@ -105,7 +101,7 @@ public class InterfazPedidoVuelo extends JFrame{
 		});
 		
 		JButton aero=new JButton();
-		aero.setText("Aeropuerto");
+		aero.setText("Hola");
 		aero.setBounds(110, 170, 250, 30);
 		aero.setHorizontalAlignment(SwingConstants.CENTER);
 		aero.setFont(new Font("arial",Font.ITALIC,20));
