@@ -38,18 +38,24 @@ public class Migracion {
 					while ((documento = br.readLine()) != null) {
 						if (documento.equals(vuelo.getTiquetes()[i].getDocumento())) {
 							try {
+								System.out.println("le doy dir");
 								String dir = "/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/delincuente.ser";
 								FileOutputStream fileOut = new FileOutputStream(dir);
+								System.out.println("abri outstr");
 								ObjectOutputStream out = new ObjectOutputStream(fileOut);
+								System.out.println("paso entre outstr y write object");
 								out.writeObject(vuelo.getTiquetes()[i].getPersona());
+								System.out.println("serialize persona");
 								
 								out.close();
 								fileOut.close();
-								
+								System.out.println("cerre ser y carpeta");
 							 	Policia policia = new Policia();
 							 	policia.arrestar(dir);
+							 	System.out.println("arreste a la persona");
 							 	return true;
 							} catch (IOException e) {
+								System.err.println("juan esteban tiene chocha");
 								System.out.println(e.getMessage());
 							}
 						}

@@ -1,6 +1,8 @@
 package Persona;
 
-public class Maleta {
+import java.io.Serializable;
+
+public class Maleta implements Serializable {
 	
 	private Mercancia[] mercancias;
 	private double peso;
