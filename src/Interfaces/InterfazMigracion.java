@@ -114,6 +114,7 @@ public class InterfazMigracion extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				menu.setVisible(true);
 				if(migra.revisarPasajerosVuelo()) {
 					
 					alerta2.setVisible(true);
@@ -123,6 +124,7 @@ public class InterfazMigracion extends JFrame{
 			}
 			
 		});
+		
 		
 		}else {
 			
@@ -164,6 +166,7 @@ public class InterfazMigracion extends JFrame{
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					menu.setVisible(true);
 					if(migra.revisarMercancia()) {
 						alertai.setVisible(true);
 					}else {
