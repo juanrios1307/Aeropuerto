@@ -67,11 +67,14 @@ public class Principal {
 		p[5]=new Persona("Juan Se", "AS54641Q", "Colombia", (int)(Math.random()*100)+1,false, maleta);
 		t[5]=new Tiquete(horaLlegada, 6, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[5], p[5]);
 		
+		for (int i = 0; i < t.length; i++) {
+			t[i]=new Tiquete(horaLlegada, 6, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[i], p[5]);
+		}
 		
 		for (int i = 0; i < vueloSalida.length; i++) {	
 			
 			for (int j = 0; j < merca.length; j++) {
-				t[j]=new Tiquete(horaLlegada, 6, 'A', 1, "4569", horaSalida, "turista", 50, vueloSalida[i], p[5]);
+				
 				vueloSalida[i].addTiquete(t[j]);
 				vueloLlegada[i].addMercancia(merca[j]);
 			}

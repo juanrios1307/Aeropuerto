@@ -23,17 +23,17 @@ import Avion.Comercial;
 
 public class InterfazMigracion extends JFrame{
 	
-	public InterfazMigracion(Vuelo v,Aeropuerto a) {
+	public InterfazMigracion(Vuelo v,Aeropuerto a,boolean b) {
 		this.setSize(500, 500);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setBackground(Color.gray);
 		
-		iniciarComponentes(v,a);
+		iniciarComponentes(v,a,b);
 	}
 	
-	public void iniciarComponentes(Vuelo v,Aeropuerto a) {
+	public void iniciarComponentes(Vuelo v,Aeropuerto a,boolean b) {
 		Migracion migra=new Migracion(v);
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
@@ -62,9 +62,21 @@ public class InterfazMigracion extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				InterfazTorreControl i1=new InterfazTorreControl(v,true,a);
-				i1.setVisible(true);
-				setVisible(false);
+				if(b) {
+					InterfazTorreControl i1=new InterfazTorreControl(v,true,a);
+					i1.setVisible(true);
+					setVisible(false);
+				}else {
+					int bool=JOptionPane.showConfirmDialog(null, "Desea continuar operaciones?");
+					if(bool==0) {
+						InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
+						i1.setVisible(true);
+						setVisible(false);
+					}else {
+						setVisible(false);
+					}
+				}
+				
 				
 			}
 			
@@ -141,10 +153,20 @@ public class InterfazMigracion extends JFrame{
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					InterfazTorreControl i1=new InterfazTorreControl(v,true,a);
-					i1.setVisible(true);
-					setVisible(false);
-					
+					if(b) {
+						InterfazTorreControl i1=new InterfazTorreControl(v,true,a);
+						i1.setVisible(true);
+						setVisible(false);
+					}else {
+						int bool=JOptionPane.showConfirmDialog(null, "Desea continuar operaciones?");
+						if(bool==0) {
+							InterfazPedidoVuelo i1=new InterfazPedidoVuelo(a);
+							i1.setVisible(true);
+							setVisible(false);
+						}else {
+							setVisible(false);
+						}
+					}
 				}
 				
 			});

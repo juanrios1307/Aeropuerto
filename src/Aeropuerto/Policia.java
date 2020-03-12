@@ -14,7 +14,7 @@ public class Policia {
 	String ubicArres="/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/arrestados.txt";
 	Mercancia merca;
 	String ubicmerca="/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercanciaDecomisada.txt";
-	public boolean arrestar(String person) {
+	public void arrestar(String person) {
 	
 		try { 
 			
@@ -28,7 +28,7 @@ public class Policia {
 				 write.append(per.getEdad()+"\n");
 				 write.append("------------------------"+"\n");
 				 write.close();
-				 return true;
+			
 			
 			}catch(IOException e1) {
 				System.out.println("E:"+e1.getMessage());}
@@ -37,22 +37,21 @@ public class Policia {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return false;
 	}
 	
-public boolean mercanciailegal(String mercanci) {
+public void mercanciailegal(String mercanci) {
 		
 		try { 
 			
 			FileInputStream fileIN=new FileInputStream(mercanci);
 			ObjectInputStream in= new ObjectInputStream(fileIN);
-		merca=(Mercancia)in.readObject();
+			merca=(Mercancia)in.readObject();
 		try {
 			BufferedWriter write=new BufferedWriter(new FileWriter(ubicmerca,true));
 			write.append(merca.getLote()+"\n");
 			write.append("------------------------"+"\n");
 			write.close();
-			return true;
+		
 	       
 	       
 		}catch(IOException e1) {
@@ -63,7 +62,6 @@ public boolean mercanciailegal(String mercanci) {
 		catch (Exception e) {
 			e.printStackTrace();
 			}
-		return false;
 }
 		
 }

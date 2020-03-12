@@ -124,7 +124,7 @@ public class InterfazMecanico extends JFrame{
 				if(m1.validacion() && m1.pesoAdecuado()&& m1.aceite()) {
 					JOptionPane.showMessageDialog(null, "El avion está en condiciones para salir");
 					
-					InterfazMigracion tc=new InterfazMigracion(v,a);
+					InterfazMigracion tc=new InterfazMigracion(v,a,true);
 					tc.setVisible(true);
 					setVisible(false);
 					

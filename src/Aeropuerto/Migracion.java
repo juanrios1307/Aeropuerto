@@ -43,6 +43,10 @@ public class Migracion {
 								FileOutputStream fileOut = new FileOutputStream(dir);
 								ObjectOutputStream out = new ObjectOutputStream(fileOut);
 								out.writeObject(vuelo.getTiquetes()[i].getPersona());
+								
+								out.close();
+								fileOut.close();
+								
 							 	Policia policia = new Policia();
 							 	policia.arrestar(dir);
 							 	return true;
@@ -60,7 +64,6 @@ public class Migracion {
 		return false;
 	}
 	
-	@SuppressWarnings("unlikely-arg-type")
 	public boolean revisarMaletas() {
 		int cont=0;
 		if (vuelo!=null) {
@@ -74,12 +77,18 @@ public class Migracion {
 							BufferedReader br = new BufferedReader(new FileReader("/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercancia.txt"));
 							String lote;
 							while ((lote = br.readLine()) != null) {
-								if (lote.equals(vuelo.getTiquetes()[i].getPersona().getMaletas()[j].getMercancias()[k])) {
+								if (lote.equals(vuelo.getTiquetes()[i].getPersona().getMaletas()[j].getMercancias()[k].getLote())) {
 									try {
 										String dir = "/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercancia.ser";
 										BufferedWriter bw = new BufferedWriter(new FileWriter(dir, false));
 										FileOutputStream fileOut = new FileOutputStream(dir);
 										ObjectOutputStream out = new ObjectOutputStream(fileOut);
+										
+										out.writeObject(vuelo.getTiquetes()[i].getPersona());
+										
+										out.close();
+										fileOut.close();
+										
 										Policia policia = new Policia();
 										policia.mercanciailegal(dir);
 										return true;
@@ -107,12 +116,17 @@ public class Migracion {
 				BufferedReader br = new BufferedReader(new FileReader("/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercancia.txt"));
 				String lote;
 				while ((lote = br.readLine()) != null) {
-					if (lote.equals(vuelo.getMercancia()[i])) {
+					if (lote.equals(vuelo.getMercancia()[i].getLote())) {
 						try {
 							String dir = "/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercancia.ser";
 							BufferedWriter bw = new BufferedWriter(new FileWriter(dir, false));
 							FileOutputStream fileOut = new FileOutputStream(dir);
 							ObjectOutputStream out = new ObjectOutputStream(fileOut);
+							out.writeObject(vuelo.getMercancia()[i]);
+							
+							out.close();
+							fileOut.close();
+							
 							Policia policia = new Policia();
 							policia.mercanciailegal(dir);
 							return true;

@@ -155,7 +155,7 @@ public class InterfazTorreControl extends JFrame{
 					JOptionPane.showMessageDialog(null, "El avion aterrizó");
 					tc.setAvionAproximando(true);
 					
-					InterfazMigracion i1=new InterfazMigracion(v,a);
+					InterfazMigracion i1=new InterfazMigracion(v,a,false);
 					i1.setVisible(true);
 					setVisible(false);
 					
