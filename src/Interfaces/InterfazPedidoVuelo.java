@@ -85,10 +85,12 @@ public class InterfazPedidoVuelo extends JFrame{
 						setVisible(false);
 					}
 				}else if(v1!=null){
-					if(horaActual.getTime() <= v1.getHoraSalida().getTime() && horaActual.getTime() >= v1.getHoraSalida().getTime()-3){
-						InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
-						i1.setVisible(true);
-						setVisible(false);
+					long diferencia = v.getHoraLlegada().getTime() - horaActual.getTime();
+					long hours = diferencia / (60 * 60 * 1000) % 24;
+					if(diferencia<3) {
+					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
+					i1.setVisible(true);
+					setVisible(false);
 					}else {
 						InterfazAdminAero i1=new InterfazAdminAero(air,v1);
 						i1.setVisible(true);
