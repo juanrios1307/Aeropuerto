@@ -36,7 +36,7 @@ public class Migracion {
 					BufferedReader br = new BufferedReader(new FileReader("/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/ipool.txt"));
 					String documento ;
 					while ((documento = br.readLine()) != null) {
-						if (documento.equals(vuelo.getTiquetes()[i].getPersona().getDocumento())) {
+						if (documento.equals(vuelo.getTiquetes()[i].getDocumento())) {
 							try {
 								String dir = "/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/delincuente.ser";
 								FileOutputStream fileOut = new FileOutputStream(dir);
