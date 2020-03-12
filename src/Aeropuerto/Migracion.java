@@ -53,9 +53,10 @@ public class Migracion {
 							 	Policia policia = new Policia();
 							 	policia.arrestar(dir);
 							 	System.out.println("arreste a la persona");
-							 	return true;
+							 	cont++;
+							 	
 							} catch (IOException e) {
-								System.err.println("juan esteban tiene chocha");
+								System.err.println("Lanza excepcion");
 								System.out.println(e.getMessage());
 							}
 						}
@@ -66,7 +67,11 @@ public class Migracion {
 				}
 			}
 		}
-		return false;
+		if(cont>0) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	public boolean revisarMaletas() {
@@ -95,7 +100,7 @@ public class Migracion {
 										
 										Policia policia = new Policia();
 										policia.mercanciailegal(dir);
-										return true;
+										cont++;
 									} catch (IOException e) {
 										System.out.println(e.getMessage());
 									}
@@ -109,7 +114,10 @@ public class Migracion {
 				}
 			}
 		}
-		return false;
+		if(cont>0)
+			return true;
+		else
+			return false;
 	}	
 	
 	public boolean revisarMercancia() {
@@ -132,7 +140,7 @@ public class Migracion {
 							
 							Policia policia = new Policia();
 							policia.mercanciailegal(dir);
-							return true;
+							cont++;
 								} catch (IOException e) {
 									System.out.println(e.getMessage());
 								}
@@ -143,7 +151,10 @@ public class Migracion {
 				e.printStackTrace();
 			}
 		}
-		return false;
+		if(cont>0)
+			return true;
+		else
+			return false;
 	}
 
 }

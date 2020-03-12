@@ -172,7 +172,8 @@ public class InterfazAddAvion extends JFrame {
 						Integer.parseInt(horasVuelo.getText()),
 						matricula.getText(),modelo.getText(),aerolinea.getText(),
 						Double.parseDouble(nivAceite.getText()));
-				/*avion.setMatricula((matricula.getText()));
+				
+				avion.setMatricula((matricula.getText()));
 				avion.setAerolinea((aerolinea.getText()));
 				avion.setModelo((modelo.getText()));
 				
@@ -181,7 +182,7 @@ public class InterfazAddAvion extends JFrame {
 				avion.setConsumo(Double.parseDouble(consumo.getText()));
 				avion.setCombustMax(Double.parseDouble(combustibleMaximo.getText()));
 				avion.setCapCarga(Double.parseDouble(capCarga.getText()));
-				avion.setNivAceite(Double.parseDouble(nivAceite.getText()));*/
+				avion.setNivAceite(Double.parseDouble(nivAceite.getText()));
 				
 				a.addAvion(avion);
 				

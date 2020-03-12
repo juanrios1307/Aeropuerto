@@ -76,6 +76,7 @@ public class Principal {
 			for (int j = 0; j < merca.length; j++) {
 				
 				vueloSalida[i].addTiquete(t[j]);
+				vueloSalida[i].addMercancia(merca[i]);
 				vueloLlegada[i].addMercancia(merca[j]);
 			}
 		}
