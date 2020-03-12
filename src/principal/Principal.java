@@ -82,6 +82,8 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		Aeropuerto a=datosPrueba();
+		//InterfazAddVuelo i=new InterfazAddVuelo(a);
+		//i.setVisible(true);
 		
 		InterfazPedidoVuelo menu=new InterfazPedidoVuelo(a);
 		menu.setVisible(true);
