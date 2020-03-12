@@ -17,7 +17,7 @@ public class InterfazAddAvion extends JFrame {
 	
 	public JPanel panel;
 	
-	public InterfazAddAvion(Aeropuerto a,Vuelo v,boolean b) {
+	public InterfazAddAvion(Aeropuerto a,Vuelo v,boolean b,String mat,String li) {
 		this.setSize(820, 400);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Sistema Aeroportuario");
@@ -25,15 +25,15 @@ public class InterfazAddAvion extends JFrame {
 		this.getContentPane().setBackground(Color.gray);
 		
 		
-		iniciarComponentes(a,v,b);
+		iniciarComponentes(a,v,b,mat,li);
 	}
 
 	
-	public void iniciarComponentes(Aeropuerto a,Vuelo v,boolean b) {
+	public void iniciarComponentes(Aeropuerto a,Vuelo v,boolean b,String mat,String li) {
 		
 		colocarPaneles(a);
 		colocarEtiquetas(a);
-		addTxtAndButton(a,v,b);
+		addTxtAndButton(a,v,b,mat,li);
 		
 	}
 	
@@ -105,10 +105,11 @@ public class InterfazAddAvion extends JFrame {
 		
 	}
 	
-	private void addTxtAndButton(Aeropuerto a,Vuelo v,boolean b) {
+	private void addTxtAndButton(Aeropuerto a,Vuelo v,boolean b,String mat,String li) {
 		
 		JTextField matricula=new JTextField();
 		matricula.setBounds(230, 80, 160, 30);
+		matricula.setText(mat);
 		panel.add(matricula);
 		
 		JTextField aerolinea=new JTextField();
@@ -195,7 +196,7 @@ public class InterfazAddAvion extends JFrame {
 					setVisible(false);
 				}else {
 					JOptionPane.showMessageDialog(null, "Piloto no creado, por favor crearlo");
-					InterfazAddPiloto i1=new InterfazAddPiloto(a,v,b);
+					InterfazAddPiloto i1=new InterfazAddPiloto(a,v,b,li);
 					i1.setVisible(true);
 					setVisible(false);
 				}

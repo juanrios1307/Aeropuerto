@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import com.toedter.calendar.JDateChooser;
+import com.toedter.calendar.JSpinnerDateEditor;
 
 import Aeropuerto.Aeropuerto;
 import Aeropuerto.Vuelo;
@@ -122,7 +123,7 @@ public JPanel panel;
 	
 	private void addTxtAndButton(Aeropuerto a,Vuelo v) {
 		
-		JDateChooser fechaCompra=new JDateChooser();
+		JSpinnerDateEditor fechaCompra=new JSpinnerDateEditor();
 		fechaCompra.setBounds(230, 80, 160, 30);
 		panel.add(fechaCompra);
 		

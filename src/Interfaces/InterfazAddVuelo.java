@@ -1,6 +1,7 @@
 package Interfaces;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import com.toedter.calendar.JDateChooser;
+import com.toedter.calendar.JDateChooserBeanInfo;
+import com.toedter.calendar.*;
 
 import javax.swing.*;
 
@@ -123,11 +126,14 @@ public class InterfazAddVuelo extends JFrame {
 		codLlegada.setBounds(230, 130, 160, 30);
 		panel.add(codLlegada);
 		
-		JDateChooser horaSalida=new JDateChooser();
+		JSpinnerDateEditor horaSalida=new JSpinnerDateEditor();
+		
 		horaSalida.setBounds(600, 80, 160, 30);
 		panel.add(horaSalida);
 		
-		JDateChooser horaLlegada=new JDateChooser();
+		
+		
+		JSpinnerDateEditor horaLlegada=new JSpinnerDateEditor();
 		horaLlegada.setBounds(600, 130, 160, 30);
 		panel.add(horaLlegada);
 
@@ -180,6 +186,7 @@ public class InterfazAddVuelo extends JFrame {
 				v.setAvion(a.buscarAvion(matriculaAvion.getText()));
 				v.setHoraSalida(horaSalida.getDate());
 				v.setHoraLlegada(horaLlegada.getDate());
+				
 				v.setPiloto(a.buscarPiloto(licenciaPiloto.getText()));
 				v.setCopiloto(a.buscarPiloto(licenciaCopiloto.getText()));
 				v.setVuelo(numeroVuelo.getText());
@@ -201,12 +208,12 @@ public class InterfazAddVuelo extends JFrame {
 					JOptionPane.showMessageDialog(null, "Vuelo añadido correctamente");
 				}else if(v.getAvion()==null){
 					JOptionPane.showMessageDialog(null, "Avion no creado, por favor crearlo");
-					InterfazAddAvion i1=new InterfazAddAvion(a,v,bool);
+					InterfazAddAvion i1=new InterfazAddAvion(a,v,bool,matriculaAvion.getText(),licenciaPiloto.getText());
 					i1.setVisible(true);
 					setVisible(false);
 				}else if(v.getPiloto()==null || v.getCopiloto()==null) {
 					JOptionPane.showMessageDialog(null, "Piloto no creado, por favor creelo para utilizar el aeropuerto");
-					InterfazAddPiloto i1=new InterfazAddPiloto(a,v,bool);
+					InterfazAddPiloto i1=new InterfazAddPiloto(a,v,bool,licenciaPiloto.getText());
 					i1.setVisible(true);
 					setVisible(false);
 				}

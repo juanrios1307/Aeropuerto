@@ -41,8 +41,14 @@ public class Aeropuerto {
 	}
 	
 	public void addAvion(Avion a) {	
-			avion=Arrays.copyOf(avion, avion.length+1);
-			avion[avion.length-1]=a;
+			try {
+				avion=Arrays.copyOf(avion, avion.length+1);
+				avion[avion.length-1]=a;
+			} catch (Exception e) {
+				System.err.println("error"+e.getMessage());
+				e.printStackTrace();
+			}
+			
 	}
 	
 	public void addPiloto(Piloto p) {	
@@ -87,7 +93,6 @@ public class Aeropuerto {
 	
 	
 	public Avion buscarAvion(String cod) {
-		
 		for (int i = 0; i < avion.length; i++) {
 			if(cod.equals(avion[i].getMatricula())) {
 				return avion[i];
