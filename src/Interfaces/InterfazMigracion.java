@@ -73,7 +73,7 @@ public class InterfazMigracion extends JFrame{
 		JLabel alertai=new JLabel();
 		alertai.setBounds(110, 120, 250,80);
 		alertai.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
-		alertai.setText("Arrestar");
+		alertai.setText("Decomisar mercancias");
 		alertai.setVisible(false);
 		panel.add(alertai);
 		
@@ -88,6 +88,7 @@ public class InterfazMigracion extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(migra.revisarMercancia()) {
+					
 					alertai.setVisible(true);
 				}else {
 					JOptionPane.showMessageDialog(null, "No se encontraron mercancias reportadas");
@@ -114,7 +115,8 @@ public class InterfazMigracion extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(migra.revisarPasajerosVuelo()) {
-					alertai.setVisible(true);
+					
+					alerta2.setVisible(true);
 				}else {
 					JOptionPane.showMessageDialog(null, "No se encontraron personas reportadas");
 				}
@@ -148,7 +150,7 @@ public class InterfazMigracion extends JFrame{
 			JLabel alertai=new JLabel();
 			alertai.setBounds(110, 120, 250,80);
 			alertai.setIcon(new ImageIcon(alerta.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
-			alertai.setText("Arrestar tripulacion");
+			alertai.setText("Decomisar Mercancia");
 			alertai.setVisible(false);
 			panel.add(alertai);
 			
@@ -162,7 +164,7 @@ public class InterfazMigracion extends JFrame{
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					if(migra.revisarPasajerosVuelo()) {
+					if(migra.revisarMercancia()) {
 						alertai.setVisible(true);
 					}else {
 						JOptionPane.showMessageDialog(null, "No se encontraron mercancias reportadas");

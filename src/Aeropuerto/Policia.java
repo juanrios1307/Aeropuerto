@@ -11,9 +11,9 @@ import Persona.Persona;
 
 public class Policia {
 	Persona per;
-	String ubicArres="C:\\Users\\jergf\\Downloads\\Proyectos lenguajes made in windows\\EstructurasDeDatos\\Aeropuerto\\archivosTexto\\arrestados.txt";
+	String ubicArres="/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/arrestados.txt";
 	Mercancia merca;
-	String ubicmerca="C:\\\\Users\\\\jergf\\\\Downloads\\\\Proyectos lenguajes made in windows\\\\EstructurasDeDatos\\\\Aeropuerto\\\\archivosTexto\\\\mercanciaDecomisada.txt";
+	String ubicmerca="/home/juan-rios/eclipse-workspace/Aeropuerto/archivosTexto/mercanciaDecomisada.txt";
 	public boolean arrestar(String person) {
 	
 		try { 
@@ -31,7 +31,7 @@ public class Policia {
 				 return true;
 			
 			}catch(IOException e1) {
-				System.out.println(e1.getMessage());}
+				System.out.println("E:"+e1.getMessage());}
 			in.close();
 			fileIN.close();
 		}catch (Exception e) {
@@ -56,7 +56,7 @@ public boolean mercanciailegal(String mercanci) {
 	       
 	       
 		}catch(IOException e1) {
-			System.out.println(e1.getMessage());}
+			System.out.println("E1:"+e1.getMessage());}
 		in.close();
 		fileIN.close();
 		}

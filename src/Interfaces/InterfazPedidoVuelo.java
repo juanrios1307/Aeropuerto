@@ -69,8 +69,6 @@ public class InterfazPedidoVuelo extends JFrame{
 				
 				
 				Date horaActual=new Date();
-
-				JOptionPane.showMessageDialog(null, horaActual.getTime());
 				
 				if(v!=null) {
 					long diferencia = v.getHoraLlegada().getTime() - horaActual.getTime();
@@ -85,12 +83,12 @@ public class InterfazPedidoVuelo extends JFrame{
 						setVisible(false);
 					}
 				}else if(v1!=null){
-					long diferencia = v.getHoraLlegada().getTime() - horaActual.getTime();
+					long diferencia = v1.getHoraLlegada().getTime() - horaActual.getTime();
 					long hours = diferencia / (60 * 60 * 1000) % 24;
 					if(diferencia<3) {
-					InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
-					i1.setVisible(true);
-					setVisible(false);
+						InterfazMecanico i1=new InterfazMecanico(air.buscarVueloSalida(vuelo.getText()),air);
+						i1.setVisible(true);
+						setVisible(false);
 					}else {
 						InterfazAdminAero i1=new InterfazAdminAero(air,v1);
 						i1.setVisible(true);
