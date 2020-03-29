@@ -18,6 +18,7 @@ import Aeropuerto.Aeropuerto;
 import Aeropuerto.Migracion;
 import Aeropuerto.TorreDeControl;
 import Aeropuerto.Vuelo;
+import excepcion.ENoFecha;
 
 public class InterfazTorreControl extends JFrame{
 
@@ -83,7 +84,12 @@ public class InterfazTorreControl extends JFrame{
 		panel.add(etiqueta6);
 		
 		JLabel etiqueta7=new JLabel();
-		etiqueta7.setText("Hora "+(b?"despegue: "+v.getHoraSalida():"aterrizaje: "+v.getHoraLlegada()));
+		try {
+			etiqueta7.setText("Hora "+(b?"despegue: "+v.getHoraSalida():"aterrizaje: "+v.getHoraLlegada()));
+		} catch (ENoFecha e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		etiqueta7.setBounds(50, 260, 400, 30);
 		etiqueta7.setFont(new Font("arial",Font.BOLD,20));
 		panel.add(etiqueta7);
@@ -124,7 +130,7 @@ public class InterfazTorreControl extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				TorreDeControl tc=new TorreDeControl();
+				TorreDeControl tc=new TorreDeControl(v);
 				if(b) {
 					tc.setPlanVuelo(para1.isSelected());
 					tc.setNotam(para2.isSelected());
